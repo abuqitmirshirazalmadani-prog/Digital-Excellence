@@ -26,6 +26,7 @@ import {
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const MobileAppDevelopmentPage = () => {
@@ -106,25 +107,12 @@ const MobileAppDevelopmentPage = () => {
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] pt-32 pb-20 bg-[#ccff00] overflow-hidden flex items-center">
-        {/* Background Decorations */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-white opacity-20 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div className="container mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-          <div className="flex flex-col gap-8 order-2 lg:order-1 relative items-center text-center">
-            {/* Breadcrumbs */}
-            <nav className="flex justify-center mb-4" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-[0.2em] text-black opacity-60">
-                <li><Link to="/" className="hover:text-[#7000ff] transition-colors">Home</Link></li>
-                <li className="flex items-center gap-2">
-                  <span>/</span>
-                  <span className="text-[#7000ff]">Mobile Apps</span>
-                </li>
-              </ol>
-            </nav>
-
+      <section className="relative pt-40 pb-20 px-6 md:px-10 overflow-hidden bg-[#ccff00]">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1 text-center lg:text-left">
             <motion.div
               initial={{ rotate: -10, opacity: 0, scale: 0.5 }}
               animate={{ rotate: -5, opacity: 1, scale: 1 }}

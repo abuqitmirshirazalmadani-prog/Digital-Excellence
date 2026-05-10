@@ -24,6 +24,8 @@ import { AnimatedShinyText } from '../components/ui/animated-shiny-text';
 import { AnimatedBreathingText } from '../components/ui/animated-breathing-text';
 import { MagicText } from '../components/ui/magic-text';
 
+import Breadcrumbs from '../components/Breadcrumbs';
+
 const PolandMarketPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -67,20 +69,10 @@ const PolandMarketPage = () => {
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center px-6 pt-32 md:px-10 overflow-hidden">
-        {/* Breadcrumbs */}
-        <nav className="flex justify-center mb-10 relative z-10" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-500">
-            <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li className="flex items-center gap-2">
-              <span>/</span>
-              <span className="text-zinc-100 font-black">European Market Hub</span>
-            </li>
-          </ol>
-        </nav>
-
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_34%)] pointer-events-none"></div>
         
         <div className="relative mx-auto max-w-7xl w-full">

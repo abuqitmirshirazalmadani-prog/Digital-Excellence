@@ -33,6 +33,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const AIAgentDevelopmentPage = () => {
@@ -192,6 +193,7 @@ const AIAgentDevelopmentPage = () => {
       <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] animate-pulse bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center pt-32 md:pt-40 pb-20 text-center px-6 overflow-hidden">

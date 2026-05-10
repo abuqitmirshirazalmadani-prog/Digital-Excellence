@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 import { db, collection, getDocs, query, where, handleFirestoreError, OperationType } from '../lib/firebase';
 import { ArrowLeft, Calendar, User, Clock, Share2, Twitter, Linkedin, Facebook, Link as LinkIcon } from 'lucide-react';
 import Header from '../components/Header';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -91,6 +92,7 @@ const BlogPostPage = () => {
     return (
         <div className="min-h-screen bg-[#f3f4f7]">
             <Header />
+            <Breadcrumbs />
             
             <main className="pt-32 pb-20 px-6">
                 <div className="max-w-4xl mx-auto">

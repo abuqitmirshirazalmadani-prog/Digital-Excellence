@@ -4,6 +4,7 @@ import { db, collection, getDocs, query, orderBy, where, handleFirestoreError, O
 import { Calendar, User, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Footer from '../components/Footer';
 
 interface Post {
@@ -69,6 +70,7 @@ const BlogPage = () => {
     return (
         <div className="min-h-screen bg-[#050505]">
             <Header />
+            <Breadcrumbs />
             <div className="pt-32 pb-20 px-4 md:px-8 max-w-[1400px] mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-16">

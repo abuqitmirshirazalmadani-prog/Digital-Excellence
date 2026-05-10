@@ -24,6 +24,8 @@ import { AnimatedShinyText } from '../components/ui/animated-shiny-text';
 import { AnimatedBreathingText } from '../components/ui/animated-breathing-text';
 import { MagicText } from '../components/ui/magic-text';
 
+import Breadcrumbs from '../components/Breadcrumbs';
+
 const CanadaMarketPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -72,19 +74,10 @@ const CanadaMarketPage = () => {
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:px-10 overflow-hidden text-center">
-        {/* Breadcrumbs */}
-        <nav className="flex justify-center mb-10" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-[0.2em] text-[#7d766c]">
-            <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li className="flex items-center gap-2">
-              <span>/</span>
-              <span className="text-white font-black">Canada Market Audit</span>
-            </li>
-          </ol>
-        </nav>
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_34%),linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_18%,transparent_82%,rgba(255,255,255,0.02))] pointer-events-none"></div>
         

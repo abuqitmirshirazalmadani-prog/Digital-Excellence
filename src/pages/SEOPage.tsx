@@ -28,6 +28,7 @@ import {
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const SEOPage = () => {
@@ -133,19 +134,10 @@ const SEOPage = () => {
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-32 pb-20 px-6 z-10">
-        {/* Breadcrumbs */}
-        <nav className="flex justify-center mb-8" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-[0.2em] text-black opacity-60">
-            <li><Link to="/" className="hover:text-black transition-colors">Home</Link></li>
-            <li className="flex items-center gap-2">
-              <span>/</span>
-              <span className="text-black font-black">SEO Mastery</span>
-            </li>
-          </ol>
-        </nav>
 
         <motion.div 
           initial={{ opacity: 0, rotate: -2 }}

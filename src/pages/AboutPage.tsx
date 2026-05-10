@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const AboutPage = () => {
   const stats = [
@@ -68,19 +69,10 @@ const AboutPage = () => {
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex flex-col justify-center items-center pt-32 pb-20 overflow-hidden">
-        {/* Breadcrumbs */}
-        <nav className="flex justify-center mb-10 relative z-10" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-600">
-            <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-            <li className="flex items-center gap-2">
-              <span>/</span>
-              <span className="text-white font-black">About Us</span>
-            </li>
-          </ol>
-        </nav>
 
         {/* Ambient Glow */}
         <div className="absolute top-0 left-0 w-full h-[100vh] bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03)_0%,transparent_70%)] pointer-events-none z-0" />

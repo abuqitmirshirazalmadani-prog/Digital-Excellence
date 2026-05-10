@@ -35,13 +35,29 @@ export default function HomePage() {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Organization",
+            "@type": ["Organization", "LocalBusiness", "ProfessionalService"],
             "name": "ABUQITMIRLABS.TECH",
             "url": "https://abuqitmirlabs.tech",
             "logo": "https://abuqitmirlabs.tech/logo.svg",
+            "image": "https://i.postimg.cc/hjLzDQHK/abuqitmir222.png",
+            "description": "High-performance software engineering agency specializing in custom software, mobile apps, and autonomous AI agents.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "UK"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 51.5074,
+              "longitude": -0.1278
+            },
+            "priceRange": "$$$",
             "sameAs": [
               "https://twitter.com/abuqitmirlabs",
-              "https://www.linkedin.com/company/abuqitmirlabs"
+              "https://www.linkedin.com/company/abuqitmirlabs",
+              "https://www.facebook.com/profile.php?id=61583768706452",
+              "https://www.instagram.com/abuqitmirshirazalmadani/",
+              "https://www.youtube.com/@AbuQitmir"
             ],
             "contactPoint": {
               "@type": "ContactPoint",
@@ -50,6 +66,30 @@ export default function HomePage() {
               "areaServed": ["US", "UK", "CA", "PK", "PL"],
               "availableLanguage": ["en", "pl", "ur"]
             }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What industries does ABUQITMIRLABS.TECH specialize in?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We specialize in Fintech, E-commerce, Healthcare, and SaaS platforms, providing high-performance, secure, and scalable digital solutions."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a typical software project take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A standard MVP (Minimum Viable Product) usually takes 8-12 weeks. Larger enterprise solutions can take 4-6 months depending on complexity."
+                }
+              }
+            ]
           })}
         </script>
       </Helmet>
