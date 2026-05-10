@@ -124,13 +124,19 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     // In production, serve the built files from dist
-    app.use(express.static(distPath, { index: false }));
+    // Ensure we serve files followed by index.html as fallback
+    app.use(express.static(distPath));
   }
 
   // GLOBAL SPA Fallback
   app.get('*', async (req, res, next) => {
     const url = req.originalUrl;
     
+    // Skip API routes
+    if (url.startsWith('/api/')) {
+      return next();
+    }
+
     try {
       if (process.env.NODE_ENV !== 'production' && vite) {
         // Dev fallback
@@ -138,13 +144,17 @@ async function startServer() {
         const html = await vite.transformIndexHtml(url, template);
         return res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
       } else {
-        // Prod fallback
+        // Prod fallback - ALWAYS serve index.html for unknown routes to support SPA
         const indexPath = path.join(distPath, 'index.html');
         if (fs.existsSync(indexPath)) {
-          return res.sendFile(indexPath);
+          return res.status(200).sendFile(indexPath);
         } else {
-          // Absolute fallback to root index (will fail js but at least not 404)
-          return res.sendFile(path.resolve(__dirname, 'index.html'));
+          // Absolute fallback to root index if dist/index.html is missing for some reason
+          const rootIndex = path.resolve(__dirname, 'index.html');
+          if (fs.existsSync(rootIndex)) {
+            return res.status(200).sendFile(rootIndex);
+          }
+          return res.status(404).send('Not Found');
         }
       }
     } catch (e) {
