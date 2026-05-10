@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Breadcrumbs from '../components/Breadcrumbs';
+
 import CountryMarquee from '../components/CountryMarquee';
 import HeroText from '../components/ui/hero-shutter-text';
 import { AnimatedShinyText } from '../components/ui/animated-shiny-text';
@@ -80,7 +80,6 @@ const PakistanMarketPage = () => {
       </Helmet>
 
       <Header />
-      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:pt-40 md:px-10 overflow-hidden">

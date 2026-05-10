@@ -25,7 +25,6 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Breadcrumbs from '../components/Breadcrumbs';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -80,7 +79,6 @@ const ContactPage = () => {
       <div className="fixed inset-0 pointer-events-none z-[60] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] blend-overlay"></div>
  
       <Header />
-      <Breadcrumbs />
  
       <main className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">

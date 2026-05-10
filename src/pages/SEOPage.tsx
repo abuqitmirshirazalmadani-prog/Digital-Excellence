@@ -28,7 +28,6 @@ import {
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const SEOPage = () => {
@@ -134,7 +133,6 @@ const SEOPage = () => {
       </Helmet>
 
       <Header />
-      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-32 md:pt-40 pb-20 px-6 z-10">

@@ -30,7 +30,6 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const WebDevelopmentPage = () => {
@@ -144,7 +143,6 @@ const WebDevelopmentPage = () => {
       </Helmet>
 
       <Header />
-      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center pt-32 md:pt-40 pb-20 px-6 z-10 overflow-hidden">

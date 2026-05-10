@@ -26,7 +26,6 @@ import {
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const MobileAppDevelopmentPage = () => {
@@ -107,7 +106,6 @@ const MobileAppDevelopmentPage = () => {
       </Helmet>
 
       <Header />
-      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-40 pb-20 px-6 md:px-10 overflow-hidden bg-[#ccff00]">
@@ -173,7 +171,7 @@ const MobileAppDevelopmentPage = () => {
              <motion.div
                animate={{ y: [0, -15, 0] }}
                transition={{ duration: 5, repeat: Infinity }}
-               className="absolute top-1/4 -left-10 bg-white border-4 border-black p-4 rounded-2xl shadow-xl z-20 hidden md:block"
+               className="absolute top-10 -left-10 bg-white border-4 border-black p-4 rounded-2xl shadow-xl z-20 hidden md:block"
              >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-[#ff0099] rounded-xl flex items-center justify-center text-white">

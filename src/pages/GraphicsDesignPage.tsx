@@ -26,7 +26,6 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const GraphicsDesignPage = () => {
@@ -142,7 +141,6 @@ const GraphicsDesignPage = () => {
         </script>
       </Helmet>
       <Header />
-      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen w-full flex items-center pt-32 md:pt-40 pb-12 overflow-hidden">

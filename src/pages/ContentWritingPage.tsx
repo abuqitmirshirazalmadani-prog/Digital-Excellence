@@ -23,7 +23,6 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const ContentWritingPage = () => {
@@ -97,7 +96,6 @@ const ContentWritingPage = () => {
   return (
     <div className="bg-[#FFFFFF] text-slate-900 font-sans antialiased overflow-x-hidden min-h-screen relative selection:bg-slate-900 selection:text-white">
       <Header />
-      <Breadcrumbs />
 
       {/* Floating Pen/Aesthetic Element */}
       <div className="fixed left-1/2 top-40 -translate-x-1/2 pointer-events-none z-0 opacity-10 hidden lg:block">

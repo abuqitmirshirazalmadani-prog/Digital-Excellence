@@ -24,8 +24,6 @@ import { AnimatedShinyText } from '../components/ui/animated-shiny-text';
 import { AnimatedBreathingText } from '../components/ui/animated-breathing-text';
 import { MagicText } from '../components/ui/magic-text';
 
-import Breadcrumbs from '../components/Breadcrumbs';
-
 const CanadaMarketPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
@@ -74,7 +72,6 @@ const CanadaMarketPage = () => {
       </Helmet>
 
       <Header />
-      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:pt-40 md:px-10 overflow-hidden text-center">
