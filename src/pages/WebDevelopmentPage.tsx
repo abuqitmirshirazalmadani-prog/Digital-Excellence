@@ -126,26 +126,12 @@ const WebDevelopmentPage = () => {
             "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
           })}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(faq => ({
-              "@type": "Question",
-              "name": faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-              }
-            }))
-          })}
-        </script>
       </Helmet>
 
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-32 md:pt-40 pb-20 px-6 z-10 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 md:pt-32 pb-20 px-6 z-10 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/10 rounded-[100%] blur-[120px] pointer-events-none" />
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-indigo-600/5 rounded-[100%] blur-[120px] pointer-events-none" />

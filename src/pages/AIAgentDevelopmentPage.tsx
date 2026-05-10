@@ -172,20 +172,6 @@ const AIAgentDevelopmentPage = () => {
             "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
           })}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(faq => ({
-              "@type": "Question",
-              "name": faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-              }
-            }))
-          })}
-        </script>
       </Helmet>
 
       {/* Noise overlay */}
@@ -194,7 +180,7 @@ const AIAgentDevelopmentPage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center pt-32 md:pt-40 pb-20 text-center px-6 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center pt-24 md:pt-32 pb-20 text-center px-6 overflow-hidden">
         {/* Animated Background Orbs */}
         <div className="absolute top-[15%] left-[20%] w-[600px] h-[600px] rounded-full bg-[#00E5FF]/5 blur-[120px] animate-pulse pointer-events-none" />
         <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-[#0099AA]/5 blur-[100px] animate-pulse pointer-events-none delay-1000" />
@@ -219,7 +205,7 @@ const AIAgentDevelopmentPage = () => {
             Agentic AI Protocol Active
           </div>
           
-          <h1 className="text-4xl md:text-[4rem] lg:text-[5rem] font-bold tracking-tighter leading-[0.9] text-white uppercase mb-10">
+          <h1 className="text-4xl md:text-[4rem] lg:text-[5rem] font-bold tracking-tighter leading-[0.95] text-white uppercase mb-10">
              AI Agent Development <br />
              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#80F2FF] via-[#00E5FF] to-[#0099AA]">for Workflow Automation.</span>
           </h1>

@@ -15,7 +15,7 @@ const HeroHeading = ({ className }: HeroHeadingProps) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="font-black uppercase tracking-tighter leading-[0.85] flex flex-col"
+                className="font-black uppercase tracking-tighter leading-[0.95] flex flex-col"
             >
                 {/* Row 1: FUTURE-PROOF */}
                 <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white">

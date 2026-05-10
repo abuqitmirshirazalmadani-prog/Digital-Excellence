@@ -171,7 +171,7 @@ const NexusHero = () => {
             </div>
 
             {/* Content Overlay */}
-            <main className="relative z-40 flex-1 flex flex-col items-center justify-center text-center px-6 pointer-events-none pt-32 pb-20 md:pt-40 md:pb-32">
+            <main className="relative z-40 flex-1 flex flex-col items-center justify-center text-center px-6 pointer-events-none pt-24 pb-20 md:pt-32 md:pb-32">
                 <div className="pointer-events-auto flex flex-col items-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

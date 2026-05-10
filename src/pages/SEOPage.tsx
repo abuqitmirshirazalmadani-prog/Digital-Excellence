@@ -116,26 +116,12 @@ const SEOPage = () => {
             "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
           })}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(faq => ({
-              "@type": "Question",
-              "name": faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-              }
-            }))
-          })}
-        </script>
       </Helmet>
 
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-32 md:pt-40 pb-20 px-6 z-10">
+      <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-24 md:pt-32 pb-20 px-6 z-10">
 
         <motion.div 
           initial={{ opacity: 0, rotate: -2 }}
@@ -148,7 +134,7 @@ const SEOPage = () => {
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-6xl md:text-8xl lg:text-[7rem] font-black tracking-tighter text-black text-center mb-10 leading-[0.85] max-w-6xl uppercase"
+          className="text-6xl md:text-8xl lg:text-[7rem] font-black tracking-tighter text-black text-center mb-10 leading-[0.95] max-w-6xl uppercase"
         >
           SEO Services <br />
           <span className="text-transparent" style={{ WebkitTextStroke: '3px black' }}>& Local Search</span> <br />

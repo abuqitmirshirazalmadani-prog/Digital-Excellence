@@ -161,20 +161,6 @@ const CustomSoftwarePage = () => {
             }
           })}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(faq => ({
-              "@type": "Question",
-              "name": faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-              }
-            }))
-          })}
-        </script>
       </Helmet>
 
       {/* Unicorn Mask Background */}
@@ -185,7 +171,7 @@ const CustomSoftwarePage = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="animate-enter-delay-2 relative pt-32 md:pt-40 pb-20 z-10">
+      <section className="animate-enter-delay-2 relative pt-24 md:pt-32 pb-20 z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative">
             {/* Floating Labels */}

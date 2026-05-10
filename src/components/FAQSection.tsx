@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Minus } from 'lucide-react';
 import { AnimatedShinyText } from './ui/animated-shiny-text';
@@ -129,20 +130,22 @@ const FAQSection = () => {
             </div>
 
             {/* Structured Data (JSON-LD) for SEO advantage */}
-            <script type="application/ld+json">
-                {JSON.stringify({
-                    "@context": "https://schema.org",
-                    "@type": "FAQPage",
-                    "mainEntity": faqItems.map(item => ({
-                        "@type": "Question",
-                        "name": item.question,
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": item.answer
-                        }
-                    }))
-                })}
-            </script>
+            <Helmet>
+                <script type="application/ld+json" id="faq-schema">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "FAQPage",
+                        "mainEntity": faqItems.map(item => ({
+                            "@type": "Question",
+                            "name": item.question,
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": item.answer
+                            }
+                        }))
+                    })}
+                </script>
+            </Helmet>
         </section>
     );
 };

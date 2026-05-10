@@ -89,29 +89,15 @@ const MobileAppDevelopmentPage = () => {
             "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
           })}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(faq => ({
-              "@type": "Question",
-              "name": faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-              }
-            }))
-          })}
-        </script>
       </Helmet>
 
       <Header />
 
       {/* Hero Section */}
-      <section className="relative pt-32 md:pt-40 pb-20 px-6 md:px-10 overflow-hidden bg-[#ccff00]">
+      <section className="relative pt-24 md:pt-32 pb-20 px-6 md:px-10 overflow-hidden bg-[#ccff00]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 text-center lg:text-left">
-            <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.85] lowercase font-display text-black pt-4">
+            <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.95] lowercase font-display text-black pt-4">
               Mobile App <br />
               <span className="text-[#7000ff]">Development.</span>
             </h1>

@@ -125,25 +125,11 @@ const GraphicsDesignPage = () => {
             "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
           })}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(faq => ({
-              "@type": "Question",
-              "name": faq.q,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.a
-              }
-            }))
-          })}
-        </script>
       </Helmet>
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full flex items-center pt-32 md:pt-40 pb-12 overflow-hidden">
+      <section className="relative min-h-screen w-full flex items-center pt-24 md:pt-32 pb-12 overflow-hidden">
         {/* Background Image Area (Matching Reference) */}
         <div className="absolute inset-0 md:left-[35%] z-0">
           <img 
@@ -176,7 +162,7 @@ const GraphicsDesignPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl sm:text-7xl md:text-[6.5rem] lg:text-[7.5rem] leading-[0.85] font-bold tracking-tighter text-white uppercase mb-10">
+              <h1 className="text-5xl sm:text-7xl md:text-[6.5rem] lg:text-[7.5rem] leading-[0.95] font-bold tracking-tighter text-white uppercase mb-10">
                 Premium Graphics<br />
                 <span className="text-[#ccff00]">Designing.</span>
               </h1>
