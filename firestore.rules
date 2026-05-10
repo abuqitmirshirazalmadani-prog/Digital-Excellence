@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+             (request.auth.token.email == "abuqitmirshirazalmadani@gmail.com" && request.auth.token.email_verified == true) ||
+             (request.auth.uid == "cRAf1wZFRRXMVadj7RDaC8WM4152")
+      );
+    }
+
+    function isValidPost(data) {
+      return data.title is string && data.title.size() <= 200 &&
+             data.content is string && data.content.size() <= 50000 &&
+             data.slug is string && data.slug.matches('^[a-z0-9-]+$') &&
+             data.authorId == request.auth.uid &&
+             (data.category in ["AI", "Software", "Business", "App", "Development"] || !data.keys().contains('category')) &&
+             (data.tags is list || !data.keys().contains('tags'));
+    }
+
+    match /posts/{postId} {
+      // Anyone can read published posts
+      allow get: if true;
+      allow list: if true; // In production, you might want to filter by 'published'
+
+      // Only admin can write
+      allow create: if isAdmin() && isValidPost(request.resource.data) &&
+                    request.resource.data.createdAt == request.time;
+      
+      allow update: if isAdmin() && isValidPost(request.resource.data) &&
+                    request.resource.data.updatedAt == request.time &&
+                    request.resource.data.authorId == resource.data.authorId;
+      
+      allow delete: if isAdmin();
+    }
+  }
+}

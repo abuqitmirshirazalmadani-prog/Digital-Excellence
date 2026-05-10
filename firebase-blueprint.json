@@ -1,0 +1,38 @@
+{
+  "entities": {
+    "BlogPost": {
+      "title": "Blog Post",
+      "description": "A blog post article.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "The title of the post" },
+        "content": { "type": "string", "description": "Markdown or HTML content" },
+        "excerpt": { "type": "string", "description": "Short summary for cards" },
+        "author": { "type": "string", "description": "Author name" },
+        "authorId": { "type": "string", "description": "UID of the author" },
+        "published": { "type": "boolean", "description": "Publish status" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "slug": { "type": "string", "description": "URL slug" },
+        "coverImage": { "type": "string", "description": "URL to header image" },
+        "category": { 
+          "type": "string", 
+          "enum": ["AI", "Software", "Business", "App", "Development"],
+          "description": "Primary category of the post" 
+        },
+        "tags": { 
+          "type": "array", 
+          "description": "List of hashtags",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["title", "content", "slug", "authorId"]
+    }
+  },
+  "firestore": {
+    "posts": {
+      "schema": "BlogPost",
+      "description": "Collection of blog articles"
+    }
+  }
+}
