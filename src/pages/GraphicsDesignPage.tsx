@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Palette, 
@@ -98,6 +99,48 @@ const GraphicsDesignPage = () => {
 
   return (
     <div className="bg-[#050505] text-neutral-300 font-sans antialiased overflow-x-hidden min-h-screen relative selection:bg-[#ccff00] selection:text-black">
+      <Helmet>
+        <title>Premium Graphics Design & Brand Identity | ABUQITMIRLABS.TECH</title>
+        <meta name="description" content="Elevate your brand with conversion-focused graphics design. From corporate brand identities and logos to high-fidelity UI/UX and social media creatives." />
+        <link rel="canonical" href="https://abuqitmirlabs.tech/graphics-design" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Premium Graphics Design | ABUQITMIRLABS.TECH" />
+        <meta property="og:description" content="Design is the silent ambassador of your brand. We craft high-impact identities and UI/UX layouts." />
+        <meta property="og:url" content="https://abuqitmirlabs.tech/graphics-design" />
+        <meta property="og:type" content="website" />
+
+        {/* Schema Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Graphics Design & Branding",
+            "description": "We craft conversion-focused brand identities, intuitive UI/UX layouts, and compelling social media creatives.",
+            "provider": {
+              "@type": "Organization",
+              "name": "ABUQITMIRLABS.TECH",
+              "url": "https://abuqitmirlabs.tech"
+            },
+            "serviceType": "Design Services",
+            "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(faq => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+              }
+            }))
+          })}
+        </script>
+      </Helmet>
       <Header />
 
       {/* Hero Section */}

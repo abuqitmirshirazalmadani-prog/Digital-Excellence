@@ -68,30 +68,6 @@ export default function HomePage() {
             }
           })}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What industries does ABUQITMIRLABS.TECH specialize in?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We specialize in Fintech, E-commerce, Healthcare, and SaaS platforms, providing high-performance, secure, and scalable digital solutions."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How long does a typical software project take?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "A standard MVP (Minimum Viable Product) usually takes 8-12 weeks. Larger enterprise solutions can take 4-6 months depending on complexity."
-                }
-              }
-            ]
-          })}
-        </script>
       </Helmet>
 
       <Header />

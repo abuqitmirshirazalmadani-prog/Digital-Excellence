@@ -9,8 +9,12 @@ import { AnimatedBreathingText } from './ui/animated-breathing-text';
 
 const faqItems = [
     {
+        question: "What industries does ABUQITMIRLABS.TECH specialize in?",
+        answer: "We specialize in Fintech, E-commerce, Healthcare, logistics, and SaaS platforms. Our engineering team provides high-performance, secure, and scalable digital solutions tailor-made for these high-stakes industries where data integrity and user trust are paramount."
+    },
+    {
         question: "How much time does it take to build a scalable MVP for a startup?",
-        answer: "The timeline for scalable MVP development typically ranges from 8 to 12 weeks, depending on the complexity of your core features. To ensure a faster time-to-market without compromising quality, we utilize cross-platform React Native solutions and Flutter for SMEs. This approach allows us to deliver high-performance, secure apps for both Android and iOS from a single codebase, handling your initial user growth effortlessly."
+        answer: "A standard MVP (Minimum Viable Product) usually takes 8-12 weeks to design and deploy. Larger, complex enterprise solutions can take 4-6 months depending on the depth of integrations and specific business logic required. We use Agile methodology to deliver usable features rapidly, ensuring you can start testing your market fit as early as possible."
     },
     {
         question: "Why should my business upgrade to Jamstack and Headless CMS?",
