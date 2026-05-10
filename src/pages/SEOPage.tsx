@@ -137,7 +137,7 @@ const SEOPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-12 md:pt-16 pb-20 px-6 z-10">
+      <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-32 md:pt-40 pb-20 px-6 z-10">
 
         <motion.div 
           initial={{ opacity: 0, rotate: -2 }}
@@ -231,9 +231,6 @@ const SEOPage = () => {
               <span className="text-transparent" style={{ WebkitTextStroke: '2px black' }}>traditional</span> <br />
               keyword seo.
             </h2>
-            <p className="text-2xl text-zinc-900 font-bold leading-snug">
-              the problem: the death of traditional keyword seo
-            </p>
           </div>
           <div className="bg-[#ccff00]/10 border-4 border-black p-12 rounded-[40px] brutalist-shadow">
             <p className="text-2xl font-bold leading-relaxed text-black">
@@ -253,9 +250,6 @@ const SEOPage = () => {
             E-E-A-T and <br />
             <span className="text-white">Entity Optimization.</span>
           </h2>
-          <p className="text-3xl md:text-4xl text-black max-w-4xl leading-tight font-black mb-16 lowercase">
-            the ABUQITMIRLABS.TECH solution: e-e-a-t and entity optimization
-          </p>
           <div className="grid grid-cols-1 md:grid-cols-1 gap-10 mb-16">
              <div className="p-12 border-4 border-black bg-white rounded-3xl brutalist-shadow">
                 <p className="text-2xl font-bold leading-relaxed">

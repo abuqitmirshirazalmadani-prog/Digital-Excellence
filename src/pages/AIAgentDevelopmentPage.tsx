@@ -196,7 +196,7 @@ const AIAgentDevelopmentPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center pt-8 md:pt-12 pb-20 text-center px-6 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center pt-32 md:pt-40 pb-20 text-center px-6 overflow-hidden">
         {/* Animated Background Orbs */}
         <div className="absolute top-[15%] left-[20%] w-[600px] h-[600px] rounded-full bg-[#00E5FF]/5 blur-[120px] animate-pulse pointer-events-none" />
         <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-[#0099AA]/5 blur-[100px] animate-pulse pointer-events-none delay-1000" />

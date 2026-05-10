@@ -110,20 +110,9 @@ const MobileAppDevelopmentPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative pt-10 md:pt-16 pb-20 px-6 md:px-10 overflow-hidden bg-[#ccff00]">
+      <section className="relative pt-32 md:pt-40 pb-20 px-6 md:px-10 overflow-hidden bg-[#ccff00]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 text-center lg:text-left">
-            <motion.div
-              initial={{ rotate: -10, opacity: 0, scale: 0.5 }}
-              animate={{ rotate: -5, opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4 }}
-              className="absolute -top-24 left-1/2 -translate-x-1/2 hidden xl:block"
-            >
-              <div className="bg-white border-4 border-black p-4 shadow-[8px_8px_0px_rgba(0,0,0,1)] rotate-[-10deg]">
-                <Zap className="w-12 h-12 text-[#7000ff]" fill="currentColor" />
-              </div>
-            </motion.div>
-
             <h1 className="text-6xl md:text-8xl font-black tracking-tight leading-[0.85] lowercase font-display text-black pt-4">
               Mobile App <br />
               <span className="text-[#7000ff]">Development.</span>

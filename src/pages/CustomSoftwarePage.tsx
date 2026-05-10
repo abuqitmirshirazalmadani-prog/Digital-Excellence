@@ -187,7 +187,7 @@ const CustomSoftwarePage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="animate-enter-delay-2 relative pt-8 md:pt-12 pb-20 z-10">
+      <section className="animate-enter-delay-2 relative pt-32 md:pt-40 pb-20 z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative">
             {/* Floating Labels */}

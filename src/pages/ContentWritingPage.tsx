@@ -105,7 +105,7 @@ const ContentWritingPage = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-10 md:pt-12 pb-20 overflow-hidden bg-white">
+      <section className="relative min-h-[90vh] flex items-center pt-32 md:pt-40 pb-20 overflow-hidden bg-white">
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full relative z-10 text-center">
             <motion.div 
                 initial={{ opacity: 0, y: 20 }}

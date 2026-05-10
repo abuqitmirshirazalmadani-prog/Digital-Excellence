@@ -72,7 +72,7 @@ const PolandMarketPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center items-center px-6 pt-10 md:pt-12 md:px-10 overflow-hidden">
+      <section className="relative min-h-[90vh] flex flex-col justify-center items-center px-6 pt-32 md:pt-40 md:px-10 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_34%)] pointer-events-none"></div>
         
         <div className="relative mx-auto max-w-7xl w-full">

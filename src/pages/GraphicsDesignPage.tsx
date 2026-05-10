@@ -145,7 +145,7 @@ const GraphicsDesignPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full flex items-center pt-8 md:pt-12 pb-12 overflow-hidden">
+      <section className="relative min-h-screen w-full flex items-center pt-32 md:pt-40 pb-12 overflow-hidden">
         {/* Background Image Area (Matching Reference) */}
         <div className="absolute inset-0 md:left-[35%] z-0">
           <img 
