@@ -12,9 +12,25 @@ const __dirname = path.dirname(__filename);
 // Import Firebase config - Handle case where file might not exist in dev
 let firebaseConfig: any = {};
 try {
-  firebaseConfig = JSON.parse(fs.readFileSync(path.join(__dirname, 'firebase-applet-config.json'), 'utf-8'));
+  const configPath = path.join(__dirname, 'firebase-applet-config.json');
+  if (fs.existsSync(configPath)) {
+    firebaseConfig = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+  }
 } catch (e) {
   console.warn('Firebase config not found, sitemap will be limited');
+}
+
+// Initialize Firebase once for server-side use
+let firebaseApp: any = null;
+let db: any = null;
+if (firebaseConfig.apiKey) {
+  try {
+    firebaseApp = initializeApp(firebaseConfig);
+    db = getFirestore(firebaseApp, firebaseConfig.firestoreDatabaseId);
+    console.log('Firebase initialized in server for sitemap');
+  } catch (e) {
+    console.error('Firebase server-side init error:', e);
+  }
 }
 
 async function startServer() {
@@ -24,6 +40,17 @@ async function startServer() {
   // Use JSON and URL encoded bodies
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+
+  // Health check route
+  app.get('/api/health', (req, res) => {
+    res.json({ 
+      status: 'ok', 
+      time: new Date().toISOString(),
+      env: process.env.NODE_ENV,
+      port: PORT,
+      firebaseEnabled: !!db
+    });
+  });
 
   // Dynamic Sitemap Route
   app.get('/sitemap.xml', async (req, res) => {
@@ -49,12 +76,8 @@ async function startServer() {
 
       let blogRoutes: string[] = [];
 
-      if (firebaseConfig.apiKey) {
-        // Initialize Firebase on server side for dynamic sitemap
-        const firebaseApp = initializeApp(firebaseConfig);
-        const db = getFirestore(firebaseApp, firebaseConfig.firestoreDatabaseId);
-
-        // Fetch blog posts from Firestore
+      if (db) {
+        // Fetch blog posts from Firestore using already initialized db
         const postsQuery = query(collection(db, 'posts'), where('published', '==', true));
         const snapshot = await getDocs(postsQuery);
         blogRoutes = snapshot.docs.map(doc => `/blog/${doc.data().slug}`);
@@ -69,7 +92,8 @@ async function startServer() {
   <url>
     <loc>${baseUrl}${route}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>
-    <priority>${route === '' ? '1.0' : route.startsWith('/blog/') ? '0.6' : '0.8'}</priority>
+    <changefreq>${route === '' ? 'daily' : 'weekly'}</changefreq>
+    <priority>${route === '' ? '1.0' : route.startsWith('/blog/') ? '0.7' : '0.8'}</priority>
   </url>`).join('')}
 </urlset>`;
 
@@ -78,32 +102,56 @@ async function startServer() {
     } catch (error) {
       console.error('Error generating sitemap:', error);
       // Fallback to static sitemap if dynamic fails
-      const distPath = path.join(process.cwd(), 'dist');
-      if (fs.existsSync(path.join(distPath, 'sitemap.xml'))) {
-        res.sendFile(path.join(distPath, 'sitemap.xml'));
+      const distPath = path.resolve(__dirname, 'dist');
+      const staticSitemap = path.join(distPath, 'sitemap.xml');
+      if (fs.existsSync(staticSitemap)) {
+        res.sendFile(staticSitemap);
       } else {
         res.status(500).send('Error generating sitemap');
       }
     }
   });
 
+  const distPath = path.resolve(__dirname, 'dist');
+  let vite: any = null;
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== 'production') {
-    const vite = await createViteServer({
+    vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
     });
     app.use(vite.middlewares);
   } else {
     // In production, serve the built files from dist
-    const distPath = path.join(process.cwd(), 'dist');
-    app.use(express.static(distPath));
-    
-    // SPA fallback
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(distPath, 'index.html'));
-    });
+    app.use(express.static(distPath, { index: false }));
   }
+
+  // GLOBAL SPA Fallback
+  app.get('*', async (req, res, next) => {
+    const url = req.originalUrl;
+    
+    try {
+      if (process.env.NODE_ENV !== 'production' && vite) {
+        // Dev fallback
+        const template = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8');
+        const html = await vite.transformIndexHtml(url, template);
+        return res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
+      } else {
+        // Prod fallback
+        const indexPath = path.join(distPath, 'index.html');
+        if (fs.existsSync(indexPath)) {
+          return res.sendFile(indexPath);
+        } else {
+          // Absolute fallback to root index (will fail js but at least not 404)
+          return res.sendFile(path.resolve(__dirname, 'index.html'));
+        }
+      }
+    } catch (e) {
+      if (vite) vite.ssrFixStacktrace(e as Error);
+      next(e);
+    }
+  });
 
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on http://localhost:${PORT}`);

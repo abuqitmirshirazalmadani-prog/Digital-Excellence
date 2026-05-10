@@ -144,24 +144,14 @@ const WebDevelopmentPage = () => {
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center pt-32 pb-20 px-6 z-10 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center items-center pt-8 md:pt-12 pb-20 px-6 z-10 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-600/10 rounded-[100%] blur-[120px] pointer-events-none" />
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-indigo-600/5 rounded-[100%] blur-[120px] pointer-events-none" />
         
-        {/* Breadcrumbs */}
-        <nav className="flex justify-center mb-10 relative z-10" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-[0.2em] text-neutral-500">
-            <li><Link to="/" className="hover:text-blue-400 transition-colors">Home</Link></li>
-            <li className="flex items-center gap-2">
-              <span>/</span>
-              <span className="text-blue-500">Web Development Services</span>
-            </li>
-          </ol>
-        </nav>
-
         <motion.div 
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}

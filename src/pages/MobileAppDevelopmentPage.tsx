@@ -110,7 +110,7 @@ const MobileAppDevelopmentPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-20 px-6 md:px-10 overflow-hidden bg-[#ccff00]">
+      <section className="relative pt-10 md:pt-16 pb-20 px-6 md:px-10 overflow-hidden bg-[#ccff00]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1 text-center lg:text-left">
             <motion.div

@@ -187,7 +187,7 @@ const CustomSoftwarePage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="animate-enter-delay-2 relative pt-20 lg:pt-32 pb-20 z-10">
+      <section className="animate-enter-delay-2 relative pt-8 md:pt-12 pb-20 z-10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="relative">
             {/* Floating Labels */}
@@ -217,17 +217,6 @@ const CustomSoftwarePage = () => {
                 <span className="mx-auto -mt-1 block h-2 w-2 rotate-45 rounded-sm bg-white"></span>
               </motion.span>
             </div>
-
-            {/* Breadcrumbs */}
-            <nav className="flex justify-center mb-10 animate-enter-delay-1" aria-label="Breadcrumb">
-              <ol className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500">
-                <li><Link to="/" className="hover:text-blue-400 transition-colors">Home</Link></li>
-                <li className="flex items-center gap-2">
-                  <span>/</span>
-                  <span className="text-blue-500">Custom Software Development</span>
-                </li>
-              </ol>
-            </nav>
 
             {/* Headline */}
             <div className="text-center relative z-10">

@@ -10,8 +10,8 @@ const Breadcrumbs = () => {
   if (pathnames.length === 0) return null;
 
   return (
-    <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-6 md:px-10 py-6">
-      <ol className="flex items-center space-x-2 text-[10px] md:text-xs font-black uppercase tracking-widest text-[#9f978a]">
+    <nav aria-label="Breadcrumb" className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-28 md:pt-36 pb-2">
+      <ol className="flex items-center space-x-2 text-[10px] md:text-xs font-black uppercase tracking-widest text-zinc-500">
         <li className="flex items-center">
           <Link to="/" className="hover:text-[#B9FF66] transition-colors flex items-center">
             <Home size={14} className="mr-1" />

@@ -137,7 +137,7 @@ const SEOPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-32 pb-20 px-6 z-10">
+      <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-12 md:pt-16 pb-20 px-6 z-10">
 
         <motion.div 
           initial={{ opacity: 0, rotate: -2 }}

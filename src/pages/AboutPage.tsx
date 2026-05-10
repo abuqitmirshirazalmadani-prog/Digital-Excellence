@@ -72,7 +72,7 @@ const AboutPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] flex flex-col justify-center items-center pt-32 pb-20 overflow-hidden">
+      <section className="relative min-h-[85vh] flex flex-col justify-center items-center pt-8 md:pt-12 pb-20 overflow-hidden">
 
         {/* Ambient Glow */}
         <div className="absolute top-0 left-0 w-full h-[100vh] bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03)_0%,transparent_70%)] pointer-events-none z-0" />

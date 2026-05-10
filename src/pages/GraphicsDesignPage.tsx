@@ -142,9 +142,10 @@ const GraphicsDesignPage = () => {
         </script>
       </Helmet>
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full flex items-center pt-24 pb-12 overflow-hidden">
+      <section className="relative min-h-screen w-full flex items-center pt-8 md:pt-12 pb-12 overflow-hidden">
         {/* Background Image Area (Matching Reference) */}
         <div className="absolute inset-0 md:left-[35%] z-0">
           <img 

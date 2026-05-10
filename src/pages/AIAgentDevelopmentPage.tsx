@@ -196,22 +196,11 @@ const AIAgentDevelopmentPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center pt-32 md:pt-40 pb-20 text-center px-6 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center pt-8 md:pt-12 pb-20 text-center px-6 overflow-hidden">
         {/* Animated Background Orbs */}
         <div className="absolute top-[15%] left-[20%] w-[600px] h-[600px] rounded-full bg-[#00E5FF]/5 blur-[120px] animate-pulse pointer-events-none" />
         <div className="absolute bottom-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-[#0099AA]/5 blur-[100px] animate-pulse pointer-events-none delay-1000" />
         
-        {/* Breadcrumbs */}
-        <nav className="flex justify-center mb-10 relative z-10" aria-label="Breadcrumb">
-          <ol className="flex items-center space-x-2 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-600">
-            <li><Link to="/" className="hover:text-[#00E5FF] transition-colors">Home</Link></li>
-            <li className="flex items-center gap-2">
-              <span>/</span>
-              <span className="text-[#00E5FF]">AI Agents</span>
-            </li>
-          </ol>
-        </nav>
-
         {/* Orbiting Elements */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0">
           <div className="w-[400px] h-[400px] rounded-full border border-[#00E5FF]/10 animate-[spin_12s_linear_infinite] relative">

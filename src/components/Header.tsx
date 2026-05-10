@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
@@ -52,7 +52,7 @@ const Header = () => {
 
     return (
         <header 
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 h-20 md:h-24 flex items-center ${
+            className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 h-20 md:h-24 flex items-center ${
                 scrolled || isOpen ? 'bg-black/95 backdrop-blur-md border-b border-white/5' : 'bg-transparent'
             }`}
         >
@@ -60,7 +60,7 @@ const Header = () => {
                 <Logo />
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-10">
+                <nav className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
                         <div key={link.name} className="relative group">
                             {link.dropdown ? (

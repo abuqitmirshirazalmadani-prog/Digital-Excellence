@@ -82,7 +82,7 @@ const USMarketPage = () => {
       <Breadcrumbs />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:px-10 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-10 md:pt-12 md:px-10 overflow-hidden">
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.04),transparent_34%),linear-gradient(to_bottom,rgba(255,255,255,0.02),transparent_18%,transparent_82%,rgba(255,255,255,0.02))] pointer-events-none"></div>
         
