@@ -33,6 +33,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const AIAgentDevelopmentPage = () => {
@@ -146,15 +147,22 @@ const AIAgentDevelopmentPage = () => {
   return (
     <div className="bg-black text-[#E8E8ED] font-sans antialiased overflow-x-hidden min-h-screen relative selection:bg-[#00E5FF]/20 selection:text-white">
       <Helmet>
-        <title>AI Agent Development | Autonomous Workflow Automation | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Expert AI agent development services focusing on LLM-powered autonomous workflow automation, RAG implementation, and custom AI personas for business efficiency." />
+        <title>AI Agent Development | Autonomous Workflow Automation ABUQITMIRLABS</title>
+        <meta name="description" content="ABUQITMIRLABS .TECH engineers autonomous AI agents and LLM-powered workflow automations. Specialized in RAG implementation, intelligent chatbots, and custom AI personas for enterprise efficiency." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/ai-agent-development" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="AI Agent Development | ABUQITMIRLABS.TECH" />
-        <meta property="og:description" content="Transform your business with autonomous AI agents. LLM-powered automation that understands your data." />
+        <meta property="og:title" content="AI Agent Development | ABUQITMIRLABS" />
+        <meta property="og:description" content="ABUQITMIRLABS .TECH engineers autonomous AI agents and LLM-powered workflow automations. Specialized in RAG implementation, chatbots, and custom AI personas." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/ai-agent-development" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Agent Development | ABUQITMIRLABS" />
+        <meta name="twitter:description" content="ABUQITMIRLABS .TECH engineers autonomous AI agents and LLM-powered workflow automations. Specialized in RAG implementation, chatbots, and custom AI personas." />
+        <meta name="twitter:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
 
         {/* Schema Markup */}
         <script type="application/ld+json">
@@ -165,11 +173,86 @@ const AIAgentDevelopmentPage = () => {
             "description": "We build custom Large Language Model (LLM) agents that understand your proprietary data, execute complex tasks, and automate workflows 24/7.",
             "provider": {
               "@type": "Organization",
-              "name": "ABUQITMIRLABS.TECH",
+              "name": "ABUQITMIRLABS .TECH",
               "url": "https://abuqitmirlabs.tech"
             },
             "serviceType": "AI Engineering",
             "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
+          })}
+        </script>
+
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(item => ({
+              "@type": "Question",
+              "name": item.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a
+              }
+            }))
+          })}
+        </script>
+
+        {/* HowTo Schema (AI Development Process) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "Our AI Agent Development Process",
+            "description": "Our rigorous 5-step methodology ensures every AI agent we build is smart, safe, and perfectly aligned with your business logic.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Knowledge Audit",
+                "text": "Analyze your documentation and databases to build a high-fidelity Knowledge Base."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Model Selection & RAG",
+                "text": "Select the optimal LLM and implement RAG to ensure zero hallucinations."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Agent Logic Design",
+                "text": "Define precise persona constraints and Tool-Calling capabilities."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Adversarial Stress Testing",
+                "text": "Attempt to break the agent with injection attacks to ensure safe operational bounds."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Seamless Integration",
+                "text": "Deploy the agent to your primary channels like Slack, Web, and CRM."
+              }
+            ]
+          })}
+        </script>
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://abuqitmirlabs.tech"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "AI Agent Development",
+                "item": "https://abuqitmirlabs.tech/ai-agent-development"
+              }
+            ]
           })}
         </script>
       </Helmet>
@@ -178,6 +261,7 @@ const AIAgentDevelopmentPage = () => {
       <div className="fixed inset-0 pointer-events-none z-[100] opacity-[0.03] animate-pulse bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center pt-24 md:pt-32 pb-20 text-center px-6 overflow-hidden">
@@ -641,7 +725,7 @@ const AIAgentDevelopmentPage = () => {
             {[
               {
                 title: "Enterprise Digital Architecture",
-                desc: "Watch our lead architect ABUQITMIRLABS.TECH breakdown complex digital ecosystems.",
+                desc: "Watch our lead architect at ABUQITMIRLABS .TECH breakdown complex digital ecosystems.",
                 videoId: "v25Fo6O3iy4"
               },
               {

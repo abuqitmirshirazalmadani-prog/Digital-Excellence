@@ -3,8 +3,10 @@ import { motion } from 'motion/react';
 import { db, collection, getDocs, query, orderBy, where, handleFirestoreError, OperationType } from '../lib/firebase';
 import { Calendar, User, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 interface Post {
   id: string;
@@ -68,7 +70,26 @@ const BlogPage = () => {
 
     return (
         <div className="min-h-screen bg-[#050505]">
+            <Helmet>
+                <title>Blog & Tech Journal | Insights ABUQITMIRLABS</title>
+                <meta name="description" content="Explore technical insights, AI trends, and software engineering strategy at the ABUQITMIRLABS .TECH Journal. Stay ahead of the curve with our expert analysis." />
+                <link rel="canonical" href="https://abuqitmirlabs.tech/blog" />
+                
+                {/* OG Tags */}
+                <meta property="og:title" content="Blog & Tech Journal | ABUQITMIRLABS" />
+                <meta property="og:description" content="Explore technical insights, AI trends, and software engineering strategy at the ABUQITMIRLABS .TECH Journal." />
+                <meta property="og:url" content="https://abuqitmirlabs.tech/blog" />
+                <meta property="og:type" content="website" />
+                <meta property="og:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+
+                {/* Twitter Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="Blog & Tech Journal | ABUQITMIRLABS" />
+                <meta name="twitter:description" content="Explore technical insights, AI trends, and software engineering strategy at the ABUQITMIRLABS .TECH Journal." />
+                <meta name="twitter:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+            </Helmet>
             <Header />
+            <Breadcrumbs />
             <div className="pt-32 pb-20 px-4 md:px-8 max-w-[1400px] mx-auto">
                 {/* Header Section */}
                 <div className="text-center mb-16">
@@ -98,9 +119,11 @@ const BlogPage = () => {
                                     <div className="aspect-video w-full overflow-hidden p-6 md:p-10">
                                         <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative border border-white/5 shadow-2xl">
                                             <img 
-                                                src={featuredPost.coverImage || 'https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?auto=format&fit=crop&q=80&w=1200'} 
+                                                src={`${featuredPost.coverImage || 'https://images.unsplash.com/photo-1485125639709-a60c3a500bf1?auto=format&fit=crop&q=80'}&w=1200&fm=webp`} 
                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                                alt={featuredPost.title}
+                                                alt={`futuristic ${featuredPost.title} featured article cover image`}
+                                                decoding="async"
+                                                fetchPriority="high"
                                             />
                                             <div className="absolute top-6 left-6">
                                                 <span className="px-5 py-2 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-white text-[10px] font-black uppercase tracking-widest">Featured Story</span>
@@ -126,7 +149,7 @@ const BlogPage = () => {
                                                     <img src="https://i.postimg.cc/FRZNKBLZ/abuqitmir222.png" alt="ABUQITMIRLABS.TECH Shiraz Almadani" className="w-full h-full rounded-full object-cover object-top" />
                                                 </div>
                                                 <div className="text-left">
-                                                    <div className="text-white text-xs font-black uppercase tracking-tight">ABUQITMIRLABS.TECH Shiraz Almadani</div>
+                                                    <div className="text-white text-xs font-black uppercase tracking-tight">ABUQITMIRLABS .TECH Shiraz Almadani</div>
                                                     <div className="text-zinc-500 text-[10px] font-bold uppercase tracking-widest">{formatDateShort(featuredPost.createdAt)}</div>
                                                 </div>
                                             </div>
@@ -194,9 +217,11 @@ const BlogPage = () => {
                                                 <Link to={`/blog/${post.slug}`}>
                                                     <div className="aspect-[16/10] rounded-[2.5rem] overflow-hidden mb-8 border border-white/5 bg-zinc-900 group-hover:border-white/10 transition-colors shadow-lg">
                                                         <img 
-                                                            src={post.coverImage || 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800'} 
+                                                            src={`${post.coverImage || 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80'}&w=800&fm=webp`} 
                                                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
-                                                            alt={post.title}
+                                                            alt={`futuristic ${post.title} blog post thumbnail`}
+                                                            loading="lazy"
+                                                            decoding="async"
                                                         />
                                                     </div>
                                                     <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-4 px-2">

@@ -26,6 +26,7 @@ import {
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const MobileAppDevelopmentPage = () => {
@@ -63,15 +64,22 @@ const MobileAppDevelopmentPage = () => {
   return (
     <div className="bg-white text-black font-sans selection:bg-[#ff0099] selection:text-white overflow-x-hidden min-h-screen">
       <Helmet>
-        <title>Mobile App Development Services | Cross-Platform Solutions | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Professional mobile app development services using React Native and Flutter. High-performance cross-platform apps designed for startups and enterprises." />
+        <title>Mobile App Development Company | Flutter & React Native ABUQITMIRLABS</title>
+        <meta name="description" content="ABUQITMIRLABS .TECH specializes in Flutter and React Native mobile development. We build futuristic, high-performance cross-platform apps with premium UI/UX and scalable backends." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/mobile-app-development" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Mobile App Development Services | ABUQITMIRLABS.TECH" />
-        <meta property="og:description" content="One codebase, both platforms. We engineering high-performance mobile apps that users love." />
+        <meta property="og:title" content="Mobile App Development Company | ABUQITMIRLABS" />
+        <meta property="og:description" content="ABUQITMIRLABS .TECH specializes in Flutter and React Native mobile development. High-performance cross-platform apps with premium UI/UX." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/mobile-app-development" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Mobile App Development Company | ABUQITMIRLABS" />
+        <meta name="twitter:description" content="ABUQITMIRLABS .TECH specializes in Flutter and React Native mobile development. High-performance cross-platform apps with premium UI/UX." />
+        <meta name="twitter:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
 
         {/* Schema Markup */}
         <script type="application/ld+json">
@@ -82,16 +90,92 @@ const MobileAppDevelopmentPage = () => {
             "description": "We design and develop high-performance, native-feeling mobile applications using advanced cross-platform frameworks.",
             "provider": {
               "@type": "Organization",
-              "name": "ABUQITMIRLABS.TECH",
+              "name": "ABUQITMIRLABS .TECH",
               "url": "https://abuqitmirlabs.tech"
             },
             "serviceType": "Mobile Engineering",
             "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
           })}
         </script>
+
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(item => ({
+              "@type": "Question",
+              "name": item.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a
+              }
+            }))
+          })}
+        </script>
+
+        {/* HowTo Schema (Mobile App Process) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "Our Mobile App Development Process",
+            "description": "A high-octane 5-step development process that transforms cross-platform app ideas into high-performance digital solutions.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Explosive Discovery",
+                "text": "Deep dive into app ideas, mapping out user journeys and technical requirements."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Brutal UI/UX Prototyping",
+                "text": "Design bold, thumb-friendly interfaces that stand out in the app store."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "High-Octane Development",
+                "text": "Build using React Native or Flutter with a single codebase that runs like native."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Intense Testing & QA",
+                "text": "Crash-test on dozens of devices to ensure zero bugs and smooth performance."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Launch & Support",
+                "text": "Handle store submissions and assets, then scale the app to the moon."
+              }
+            ]
+          })}
+        </script>
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://abuqitmirlabs.tech"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Mobile App Development",
+                "item": "https://abuqitmirlabs.tech/mobile-app-development"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative pt-24 md:pt-32 pb-20 px-6 md:px-10 overflow-hidden bg-[#ccff00]">
@@ -458,7 +542,7 @@ const MobileAppDevelopmentPage = () => {
             {[
               {
                 title: "Enterprise Digital Architecture",
-                desc: "Watch our lead architect ABUQITMIRLABS.TECH breakdown complex digital ecosystems.",
+                desc: "Watch our lead architect at ABUQITMIRLABS .TECH breakdown complex digital ecosystems.",
                 videoId: "v25Fo6O3iy4"
               },
               {
@@ -632,7 +716,7 @@ const MobileAppDevelopmentPage = () => {
         {/* Massive Background Text */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none pointer-events-none select-none z-0">
              <span className="text-[15vw] font-black text-black opacity-10 whitespace-nowrap tracking-tighter block translate-y-[40%] lowercase font-display">
-                 ABUQITMIRLABS.TECH
+                 ABUQITMIRLABS .TECH
              </span>
         </div>
 

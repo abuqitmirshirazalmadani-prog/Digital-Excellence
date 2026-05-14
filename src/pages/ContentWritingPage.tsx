@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { 
   PenTool, 
   Search, 
@@ -19,11 +20,16 @@ import {
   Sparkles,
   MousePointer2,
   Layers,
-  Cpu
+  Cpu,
+  Globe,
+  Star,
+  Smartphone
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CountryMarquee from '../components/CountryMarquee';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const ContentWritingPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -95,7 +101,44 @@ const ContentWritingPage = () => {
 
   return (
     <div className="bg-[#FFFFFF] text-slate-900 font-sans antialiased overflow-x-hidden min-h-screen relative selection:bg-slate-900 selection:text-white">
+      <Helmet>
+        <title>Content Writing Services | SEO Blogs & Technical Copy ABUQITMIRLABS</title>
+        <meta name="description" content="ABUQITMIRLABS .TECH provides high-authority content writing. From technical whitepapers and SEO-optimized blogs to persuasive SaaS copywriting that builds trust and ranks." />
+        <link rel="canonical" href="https://abuqitmirlabs.tech/content-writing" />
+        
+        {/* Open Graph */}
+        <meta property="og:title" content="Content Writing & Strategy | ABUQITMIRLABS" />
+        <meta property="og:description" content="ABUQITMIRLABS .TECH provides high-authority content writing. From technical whitepapers and SEO blogs to persuasive SaaS copywriting." />
+        <meta property="og:url" content="https://abuqitmirlabs.tech/content-writing" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Content Writing & Strategy | ABUQITMIRLABS" />
+        <meta name="twitter:description" content="ABUQITMIRLABS .TECH provides high-authority content writing. From technical whitepapers and SEO blogs to persuasive SaaS copywriting." />
+        <meta name="twitter:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+
+        {/* Schema Markup */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "Content Writing",
+            "description": "We provide E-E-A-T focused, meticulously researched content writing that satisfies complex search engine algorithms and builds genuine trust.",
+            "provider": {
+              "@type": "Organization",
+              "name": "ABUQITMIRLABS .TECH",
+              "url": "https://abuqitmirlabs.tech"
+            },
+            "serviceType": "Content Strategy",
+            "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
+          })}
+        </script>
+      </Helmet>
+
       <Header />
+      <Breadcrumbs />
 
       {/* Floating Pen/Aesthetic Element */}
       <div className="fixed left-1/2 top-40 -translate-x-1/2 pointer-events-none z-0 opacity-10 hidden lg:block">
@@ -130,7 +173,7 @@ const ContentWritingPage = () => {
                 transition={{ delay: 0.2 }}
                 className="max-w-2xl mx-auto text-lg md:text-xl text-slate-500 font-light leading-relaxed mb-12"
             >
-                Break through the noise of AI-generated spam. We provide E-E-A-T focused, meticulously researched content writing that satisfies complex search engine algorithms and builds genuine trust with human readers.
+                Break through the noise of AI-generated spam. We provide E-E-A-T focused, meticulously researched content writing by ABUQITMIRLABS .TECH that satisfies complex search engine algorithms and builds genuine trust with human readers.
             </motion.p>
 
             <motion.div 

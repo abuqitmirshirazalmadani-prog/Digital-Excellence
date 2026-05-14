@@ -25,6 +25,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -61,15 +62,22 @@ const ContactPage = () => {
   return (
     <div className="bg-black text-[#E8E8ED] font-sans antialiased overflow-x-hidden min-h-screen relative selection:bg-[#00E5FF]/20 selection:text-white">
       <Helmet>
-        <title>Contact ABUQITMIRLABS.TECH | Hire a Custom Software Specialist</title>
-        <meta name="description" content="Ready to build something world-class? Contact ABUQITMIRLABS.TECH for custom software development, web engineering, and AI agent automation projects." />
+        <title>Contact ABUQITMIRLABS | Hire a Custom Software Specialist</title>
+        <meta name="description" content="Connect with the lead architects at ABUQITMIRLABS .TECH. Hire us for custom software development, AI agent automation, and world-class digital engineering projects. Secure communication relay active." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/contact" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Contact ABUQITMIRLABS.TECH | Let's Build Your Vision" />
-        <meta property="og:description" content="Secure communication relay active. Send your project details directly to ABUQITMIRLABS.TECH." />
+        <meta property="og:title" content="Contact ABUQITMIRLABS | Let's Build Your Vision" />
+        <meta property="og:description" content="Connect with the lead architects at ABUQITMIRLABS .TECH for custom software development and AI automation." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/contact" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+
+        {/* Twitter Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact ABUQITMIRLABS | Hire a Custom Software Specialist" />
+        <meta name="twitter:description" content="Connect with the lead architects at ABUQITMIRLABS .TECH for custom software development and AI automation." />
+        <meta name="twitter:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
       </Helmet>
 
       {/* Scanline Overlay */}
@@ -79,6 +87,7 @@ const ContactPage = () => {
       <div className="fixed inset-0 pointer-events-none z-[60] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] blend-overlay"></div>
  
       <Header />
+      <Breadcrumbs />
  
       <main className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto">

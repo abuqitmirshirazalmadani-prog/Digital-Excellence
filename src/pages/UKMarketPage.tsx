@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 import HeroText from '../components/ui/hero-shutter-text';
 import { AnimatedShinyText } from '../components/ui/animated-shiny-text';
@@ -60,17 +61,19 @@ const UKMarketPage = () => {
   return (
     <div className="bg-[#090909] text-[#d3c8b8] min-h-screen font-sans selection:bg-[#ff5b36] selection:text-white">
       <Helmet>
-        <title>Tech Solutions & Software Development UK | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Delivering world-class software and web engineering to UK businesses. GMT-synchronized collaboration and GDPR-compliant tech stacks for London and beyond." />
+        <title>Tech Solutions & Software Development UK | ABUQITMIRLABS</title>
+        <meta name="description" content="World-class digital transformation for UK businesses by ABUQITMIRLABS .TECH. GDPR-compliant software development, high-performance web apps, and London-centric local SEO." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/uk-market" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="UK Digital Transformation | ABUQITMIRLABS.TECH" />
+        <meta property="og:title" content="UK Digital Transformation | ABUQITMIRLABS" />
+        <meta property="og:description" content="World-class digital transformation for UK businesses by ABUQITMIRLABS .TECH. GDPR-compliant software development and high-performance web apps." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/uk-market" />
         <meta property="og:type" content="website" />
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:pt-40 md:px-10 overflow-hidden text-center">
@@ -97,7 +100,7 @@ const UKMarketPage = () => {
             </div>
 
             <MagicText 
-              text="Propel your UK business forward with ABUQITMIRLABS.TECH. We provide bespoke custom software, high-performance web development, and UK-targeted local SEO designed to help British enterprises and London-based startups thrive."
+              text="Propel your UK business forward with ABUQITMIRLABS .TECH. We provide bespoke custom software, high-performance web development, and UK-targeted local SEO designed to help British enterprises and London-based startups thrive."
               className="max-w-3xl text-xl md:text-2xl text-[#9f978a] mx-auto"
             />
 

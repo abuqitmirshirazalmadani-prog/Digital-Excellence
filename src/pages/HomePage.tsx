@@ -21,15 +21,21 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-white/20 selection:text-white">
       <Helmet>
-        <title>ABUQITMIRLABS.TECH | Custom Software, Web & AI Agent Development</title>
-        <meta name="description" content="ABUQITMIRLABS.TECH is a high-performance software engineering agency specializing in custom software, mobile apps, web development, and autonomous AI agents." />
+        <title>AI Mobile App Development Company | SaaS & Flutter Apps ABUQITMIRLABS</title>
+        <meta name="description" content="ABUQITMIRLABS .TECH builds futuristic AI-powered mobile apps, SaaS platforms, Flutter applications, and no-code startup solutions with premium UI/UX and scalable architecture." />
         <link rel="canonical" href="https://abuqitmirlabs.tech" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="ABUQITMIRLABS.TECH | Software Engineering Agency" />
-        <meta property="og:description" content="Custom software, web engineering, and AI automation for modern brands. Fast, secure, and infinitely scalable." />
+        <meta property="og:title" content="AI Mobile App Development Company | SaaS & Flutter Apps ABUQITMIRLABS" />
+        <meta property="og:description" content="ABUQITMIRLABS .TECH builds futuristic AI-powered mobile apps, SaaS platforms, Flutter applications, and no-code startup solutions with premium UI/UX and scalable architecture." />
         <meta property="og:url" content="https://abuqitmirlabs.tech" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="AI Mobile App Development Company | SaaS & Flutter Apps ABUQITMIRLABS" />
+        <meta name="twitter:description" content="ABUQITMIRLABS .TECH builds futuristic AI-powered mobile apps, SaaS platforms, Flutter applications, and no-code startup solutions with premium UI/UX and scalable architecture." />
+        <meta name="twitter:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
 
         {/* Schema Markup */}
         <script type="application/ld+json">
@@ -39,8 +45,9 @@ export default function HomePage() {
             "name": "ABUQITMIRLABS.TECH",
             "url": "https://abuqitmirlabs.tech",
             "logo": "https://abuqitmirlabs.tech/logo.svg",
+            "alternateName": "Abu Qitmir Labs",
             "image": "https://i.postimg.cc/hjLzDQHK/abuqitmir222.png",
-            "description": "High-performance software engineering agency specializing in custom software, mobile apps, and autonomous AI agents.",
+            "description": "ABUQITMIRLABS .TECH builds futuristic AI-powered mobile apps, SaaS platforms, Flutter applications, and no-code startup solutions with premium UI/UX and scalable architecture.",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "London",
@@ -65,7 +72,27 @@ export default function HomePage() {
               "contactType": "customer service",
               "areaServed": ["US", "UK", "CA", "PK", "PL"],
               "availableLanguage": ["en", "pl", "ur"]
+            },
+            "founder": {
+                "@type": "Person",
+                "name": "Shiraz Almadani"
             }
+          })}
+        </script>
+
+        {/* Breadcrumb Schema (Home) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://abuqitmirlabs.tech"
+              }
+            ]
           })}
         </script>
       </Helmet>

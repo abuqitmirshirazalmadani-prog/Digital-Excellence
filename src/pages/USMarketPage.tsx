@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 import CountryMarquee from '../components/CountryMarquee';
 import HeroText from '../components/ui/hero-shutter-text';
@@ -68,17 +69,19 @@ const USMarketPage = () => {
   return (
     <div className="bg-[#090909] text-[#d3c8b8] min-h-screen font-sans selection:bg-[#ff5b36] selection:text-white">
       <Helmet>
-        <title>Software & Web Development Services USA | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Scale your US-based business with high-performance software engineering. Specializing in Jamstack web development and AI automation for the American market." />
+        <title>Software & Web Development Services USA | ABUQITMIRLABS</title>
+        <meta name="description" content="Premium software and web engineering for the US market by ABUQITMIRLABS .TECH. Specialized AI solutions and aggressive SEO for American startups, from Silicon Valley to NYC." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/us-market" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Elite Software Engineering for the US Market | ABUQITMIRLABS.TECH" />
+        <meta property="og:title" content="Elite Software Engineering for the US Market | ABUQITMIRLABS" />
+        <meta property="og:description" content="Premium software and web engineering for the US market by ABUQITMIRLABS .TECH. Specialized AI solutions and aggressive SEO for American startups." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/us-market" />
         <meta property="og:type" content="website" />
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:pt-40 md:px-10 overflow-hidden">
@@ -105,7 +108,7 @@ const USMarketPage = () => {
             </div>
 
             <MagicText 
-              text="From Silicon Valley tech startups to established East Coast enterprises, ABUQITMIRLABS.TECH delivers world-class custom software, autonomous AI agents, and aggressive semantic SEO strategies tailored to dominate the highly competitive US digital landscape."
+              text="From Silicon Valley tech startups to established East Coast enterprises, ABUQITMIRLABS .TECH delivers world-class custom software, autonomous AI agents, and aggressive semantic SEO strategies tailored to dominate the highly competitive US digital landscape."
               className="max-w-2xl text-lg md:text-xl text-[#9f978a]"
             />
 
@@ -182,7 +185,7 @@ const USMarketPage = () => {
       <section className="py-32 px-6 md:px-10 bg-[#0b0b0b]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
-            <span className="text-sm font-semibold uppercase tracking-[0.35em] text-[#bfb4a3] mb-8 block">The ABUQITMIRLABS.TECH Edge</span>
+            <span className="text-sm font-semibold uppercase tracking-[0.35em] text-[#bfb4a3] mb-8 block">The ABUQITMIRLABS .TECH Edge</span>
             <AnimatedShinyText 
               text="Silicon Valley Standards, Global Scalability." 
               textClassName="text-4xl md:text-7xl"

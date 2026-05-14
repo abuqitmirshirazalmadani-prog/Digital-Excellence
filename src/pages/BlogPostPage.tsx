@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import { db, collection, getDocs, query, where, handleFirestoreError, OperationType } from '../lib/firebase';
 import { ArrowLeft, Calendar, User, Clock, Share2, Twitter, Linkedin, Facebook, Link as LinkIcon } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -90,7 +92,80 @@ const BlogPostPage = () => {
 
     return (
         <div className="min-h-screen bg-[#f3f4f7]">
+            <Helmet>
+                <title>{post.title} | ABUQITMIRLABS Journal</title>
+                <meta name="description" content={post.content.substring(0, 160).replace(/[#*`]/g, '') + " | ABUQITMIRLABS .TECH"} />
+                <link rel="canonical" href={`https://abuqitmirlabs.tech/blog/${slug}`} />
+                
+                {/* OG Tags */}
+                <meta property="og:title" content={`${post.title} | ABUQITMIRLABS Journal`} />
+                <meta property="og:description" content={`${post.content.substring(0, 160).replace(/[#*`]/g, '')} | Technical Blog by ABUQITMIRLABS .TECH`} />
+                <meta property="og:image" content={post.coverImage || "https://i.postimg.cc/hjLzDQHK/abuqitmir222.png"} />
+                <meta property="og:type" content="article" />
+                <meta property="og:url" content={`https://abuqitmirlabs.tech/blog/${slug}`} />
+
+                {/* Twitter Tags */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={`${post.title} | ABUQITMIRLABS Journal`} />
+                <meta name="twitter:description" content={`${post.content.substring(0, 160).replace(/[#*`]/g, '')} | Technical Insights by ABUQITMIRLABS .TECH`} />
+                <meta name="twitter:image" content={post.coverImage || "https://i.postimg.cc/hjLzDQHK/abuqitmir222.png"} />
+                
+                {/* Article Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BlogPosting",
+                        "headline": post.title,
+                        "image": post.coverImage || "https://i.postimg.cc/hjLzDQHK/abuqitmir222.png",
+                        "author": {
+                            "@type": "Person",
+                            "name": post.author,
+                            "url": "https://abuqitmirlabs.tech/about"
+                        },
+                        "publisher": {
+                            "@type": "Organization",
+                            "name": "ABUQITMIRLABS .TECH",
+                            "logo": {
+                                "@type": "ImageObject",
+                                "url": "https://abuqitmirlabs.tech/logo.svg"
+                            }
+                        },
+                        "datePublished": post.createdAt?.toDate ? post.createdAt.toDate().toISOString() : new Date(post.createdAt).toISOString(),
+                        "description": post.content.substring(0, 160).replace(/[#*`]/g, '')
+                    })}
+                </script>
+
+                {/* Breadcrumb Schema */}
+                <script type="application/ld+json">
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://abuqitmirlabs.tech"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Blog",
+                                "item": "https://abuqitmirlabs.tech/blog"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": post.title,
+                                "item": `https://abuqitmirlabs.tech/blog/${slug}`
+                            }
+                        ]
+                    })}
+                </script>
+            </Helmet>
+            
             <Header />
+            <Breadcrumbs />
             
             <main className="pt-32 pb-20 px-6">
                 <div className="max-w-4xl mx-auto">
@@ -152,7 +227,7 @@ const BlogPostPage = () => {
                             animate={{ opacity: 1, scale: 1 }}
                             className="aspect-video w-full rounded-[3rem] overflow-hidden mb-16 shadow-2xl shadow-blue-500/5 group"
                         >
-                            <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+                            <img src={post.coverImage} alt={`futuristic ${post.title} feature illustration`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
                         </motion.div>
                     )}
 
@@ -194,10 +269,10 @@ const BlogPostPage = () => {
                     <div className="mt-20 pt-10 border-t border-black/5">
                         <div className="bg-white border border-black/5 rounded-[2.5rem] p-10 flex flex-col md:flex-row items-center gap-10 shadow-sm">
                             <div className="h-24 w-24 bg-zinc-950 rounded-3xl overflow-hidden shrink-0 shadow-lg border-2 border-white">
-                                <img src="https://i.postimg.cc/FRZNKBLZ/abuqitmir222.png" alt="ABUQITMIRLABS.TECH Shiraz Almadani" className="w-full h-full object-cover object-top" />
+                                <img src="https://i.postimg.cc/FRZNKBLZ/abuqitmir222.png" alt="Shiraz Almadani - Lead Architect at ABUQITMIRLABS.TECH" className="w-full h-full object-cover object-top" />
                             </div>
                             <div>
-                                <h3 className="text-2xl font-black text-black mb-3 uppercase tracking-tight">ABUQITMIRLABS.TECH Shiraz Almadani</h3>
+                                <h3 className="text-2xl font-black text-black mb-3 uppercase tracking-tight">ABUQITMIRLABS .TECH Shiraz Almadani</h3>
                                 <p className="text-zinc-500 leading-relaxed max-w-xl">Lead Architect & Engineering Consultant. Specializing in high-performance digital ecosystems, AI-driven architectures, and building the future of software development.</p>
                             </div>
                         </div>

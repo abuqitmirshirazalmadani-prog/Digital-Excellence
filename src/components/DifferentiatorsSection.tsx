@@ -58,9 +58,11 @@ const DifferentiatorsSection = () => {
                     className="group relative overflow-hidden rounded-2xl border border-purple-400/30 bg-purple-500/5 backdrop-blur shadow-lg shadow-purple-500/10"
                 >
                     <img 
-                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1974&auto=format&fit=crop" 
-                        alt="Network architecture" 
+                        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop&fm=webp" 
+                        alt="futuristic global network and data infrastructure visual for future-proof scaling" 
                         className="absolute inset-0 h-full w-full object-cover opacity-30 group-hover:scale-105 transition-transform duration-700"
+                        loading="lazy"
+                        decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent"></div>
                     <div className="relative px-5 py-8">

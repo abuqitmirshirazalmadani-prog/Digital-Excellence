@@ -28,6 +28,7 @@ import {
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const SEOPage = () => {
@@ -90,13 +91,13 @@ const SEOPage = () => {
   return (
     <div className="bg-[#f4f4f5] text-black font-display antialiased overflow-x-hidden min-h-screen relative selection:bg-[#ccff00]">
       <Helmet>
-        <title>SEO Services | Semantic Entity SEO & Local Search Mastery | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Advanced SEO services focusing on Semantic Entity SEO, E-E-A-T strategy, and Local Search dominance for brands looking to outrank competitors." />
+        <title>SEO Services | Semantic Entity SEO & Local Search Mastery ABUQITMIRLABS</title>
+        <meta name="description" content="Dominate search results with ABUQITMIRLABS .TECH. Advanced Semantic Entity SEO, Local Map Mastery, and E-E-A-T focused content strategies designed to drive organic ROI." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/seo-mastery" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="SEO Services | ABUQITMIRLABS.TECH" />
-        <meta property="og:description" content="Dominate every search intent with semantic SEO and local map mastery." />
+        <meta property="og:title" content="SEO Mastery | ABUQITMIRLABS" />
+        <meta property="og:description" content="Dominate search results with ABUQITMIRLABS .TECH. Advanced Semantic Entity SEO, Local Map Mastery, and E-E-A-T focused content strategies." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/seo-mastery" />
         <meta property="og:type" content="website" />
 
@@ -109,7 +110,7 @@ const SEOPage = () => {
             "description": "We specialize in data-driven Semantic Entity SEO and hyper-local map strategies to establish your brand's topical authority.",
             "provider": {
               "@type": "Organization",
-              "name": "ABUQITMIRLABS.TECH",
+              "name": "ABUQITMIRLABS .TECH",
               "url": "https://abuqitmirlabs.tech"
             },
             "serviceType": "Search Engine Optimization",
@@ -119,6 +120,7 @@ const SEOPage = () => {
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center pt-24 md:pt-32 pb-20 px-6 z-10">

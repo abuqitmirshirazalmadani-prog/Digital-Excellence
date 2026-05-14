@@ -17,31 +17,27 @@ const HeroHeading = ({ className }: HeroHeadingProps) => {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="font-black uppercase tracking-tighter leading-[0.95] flex flex-col"
             >
-                {/* Row 1: FUTURE-PROOF */}
-                <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
-                    Future-Proof
+                {/* Row 1: AI MOBILE APP DEVELOPMENT COMPANY */}
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white">
+                    AI Mobile App Development <br className="hidden md:block" /> Company
                 </span>
                 
-                {/* Row 2: YOUR BUSINESS */}
-                <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white">
-                    Your Business
-                </span>
-                
-                {/* Row 3: WITH AI-DRIVEN TECH (Outlined) */}
-                <span 
-                    className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
-                    style={{ 
-                        WebkitTextStroke: '1px white',
-                        color: 'transparent'
-                    }}
-                >
-                    With AI-Driven Tech
-                </span>
-                
-                {/* Row 4: & SEMANTIC SEO SOLUTIONS (Lime) */}
-                <span className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-[#ccff00]">
-                    & Semantic SEO Solutions.
-                </span>
+                {/* Row 2: SaaS & Flutter Apps | ABUQITMIRLABS */}
+                <div className="flex flex-col md:flex-row items-center gap-4 mt-4">
+                    <span 
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl"
+                        style={{ 
+                            WebkitTextStroke: '1px white',
+                            color: 'transparent'
+                        }}
+                    >
+                        SaaS & Flutter Apps
+                    </span>
+                    <span className="hidden md:block text-5xl lg:text-7xl text-white/20">|</span>
+                    <span className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-[#ccff00]">
+                        ABUQITMIRLABS
+                    </span>
+                </div>
             </motion.h1>
         </div>
     );

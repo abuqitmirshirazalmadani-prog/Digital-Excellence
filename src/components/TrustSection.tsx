@@ -38,7 +38,7 @@ const TrustSection = () => {
                             variants={fadeInSlide}
                             className="overflow-hidden bg-center border border-white/10 rounded-2xl relative min-h-[440px] sm:h-[520px]"
                             style={{ 
-                                backgroundImage: 'url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800)',
+                                backgroundImage: 'url(https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200&fm=webp)',
                                 backgroundSize: 'cover'
                             }}
                         >

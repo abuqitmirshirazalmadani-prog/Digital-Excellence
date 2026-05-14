@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const GraphicsDesignPage = () => {
@@ -99,13 +100,13 @@ const GraphicsDesignPage = () => {
   return (
     <div className="bg-[#050505] text-neutral-300 font-sans antialiased overflow-x-hidden min-h-screen relative selection:bg-[#ccff00] selection:text-black">
       <Helmet>
-        <title>Premium Graphics Design & Brand Identity | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Elevate your brand with conversion-focused graphics design. From corporate brand identities and logos to high-fidelity UI/UX and social media creatives." />
+        <title>Premium Graphics Design & Brand Identity ABUQITMIRLABS</title>
+        <meta name="description" content="Elevate your digital identity with ABUQITMIRLABS .TECH. Premium brand identity design, conversion-focused UI/UX layouts, and high-fidelity social media creatives." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/graphics-design" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Premium Graphics Design | ABUQITMIRLABS.TECH" />
-        <meta property="og:description" content="Design is the silent ambassador of your brand. We craft high-impact identities and UI/UX layouts." />
+        <meta property="og:title" content="Premium Graphics Design | ABUQITMIRLABS" />
+        <meta property="og:description" content="Elevate your digital identity with ABUQITMIRLABS .TECH. Premium brand identity design and conversion-focused UI/UX layouts." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/graphics-design" />
         <meta property="og:type" content="website" />
 
@@ -118,7 +119,7 @@ const GraphicsDesignPage = () => {
             "description": "We craft conversion-focused brand identities, intuitive UI/UX layouts, and compelling social media creatives.",
             "provider": {
               "@type": "Organization",
-              "name": "ABUQITMIRLABS.TECH",
+              "name": "ABUQITMIRLABS .TECH",
               "url": "https://abuqitmirlabs.tech"
             },
             "serviceType": "Design Services",
@@ -127,15 +128,18 @@ const GraphicsDesignPage = () => {
         </script>
       </Helmet>
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen w-full flex items-center pt-24 md:pt-32 pb-12 overflow-hidden">
         {/* Background Image Area (Matching Reference) */}
         <div className="absolute inset-0 md:left-[35%] z-0">
           <img 
-            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop" 
-            alt="Premium Design Background" 
+            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1600&auto=format&fit=crop&fm=webp" 
+            alt="futuristic premium graphics design background texture" 
             className="w-full h-full object-cover opacity-30 mix-blend-luminosity grayscale contrast-150"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/90 to-transparent"></div>
         </div>
@@ -294,7 +298,7 @@ const GraphicsDesignPage = () => {
             viewport={{ once: true }}
             className="text-center max-w-4xl mx-auto mb-32"
           >
-            <span className="text-xs font-bold text-[#ccff00] uppercase tracking-[0.4em] block mb-8">[ SECTION_02: THE_SOLUTION ]</span>
+            <span className="text-xs font-bold text-[#ccff00] uppercase tracking-[0.5em] block mb-8">The ABUQITMIRLABS .TECH Solution</span>
             <h2 className="text-5xl md:text-8xl font-bold text-white tracking-tighter uppercase leading-[0.8] mb-12">
               Strategic, <br />
               <span className="italic text-transparent" style={{ WebkitTextStroke: '1px white' }}>ROI-Driven</span> Design

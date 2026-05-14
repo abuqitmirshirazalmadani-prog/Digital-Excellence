@@ -64,15 +64,13 @@ const Footer = () => {
 
                     {/* CTA Button */}
                     <div className="relative inline-block group mt-12">
-                        <a 
-                            href="https://wa.me/923233260859"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="relative z-10 px-10 py-6 bg-black text-[#ccff00] font-black text-2xl rounded-2xl brutalist-shadow border-4 border-black flex items-center gap-4 transition-transform uppercase tracking-tighter"
+                        <Link 
+                            to="/contact"
+                            className="relative z-10 px-10 py-6 bg-black text-[#ccff00] font-black text-2xl rounded-2xl brutalist-shadow border-4 border-black flex items-center gap-4 transition-transform uppercase tracking-tighter hover:bg-[#ccff00] hover:text-black"
                         >
-                            Book Your Free Strategy Call!
+                            Start Your Project
                             <ArrowRight className="w-8 h-8" />
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Contact info Bar */}
@@ -148,6 +146,9 @@ const Footer = () => {
                         <Link to="/pakistan-market" className="hover:underline transition-colors">Pakistan Market</Link>
                         <Link to="/canada-market" className="hover:underline transition-colors">Canada Market</Link>
                         <Link to="/poland-market" className="hover:underline transition-colors">Poland Market</Link>
+                        <Link to="/australia-market" className="hover:underline transition-colors">Australia Market</Link>
+                        <Link to="/terms" className="hover:underline transition-colors">Terms of Service</Link>
+                        <Link to="/privacy" className="hover:underline transition-colors">Privacy Policy</Link>
                         <Link to="/blog" className="hover:underline transition-colors uppercase">Blog</Link>
                         <button 
                             onClick={() => window.location.href = '/admin'}

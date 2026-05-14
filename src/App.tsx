@@ -5,25 +5,37 @@
 
 import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
-import HomePage from './pages/HomePage';
-import CustomSoftwarePage from './pages/CustomSoftwarePage';
-import MobileAppDevelopmentPage from './pages/MobileAppDevelopmentPage';
-import WebDevelopmentPage from './pages/WebDevelopmentPage';
-import AIAgentDevelopmentPage from './pages/AIAgentDevelopmentPage';
-import SEOPage from './pages/SEOPage';
-import GraphicsDesignPage from './pages/GraphicsDesignPage';
-import ContentWritingPage from './pages/ContentWritingPage';
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import USMarketPage from './pages/USMarketPage';
-import UKMarketPage from './pages/UKMarketPage';
-import PakistanMarketPage from './pages/PakistanMarketPage';
-import CanadaMarketPage from './pages/CanadaMarketPage';
-import PolandMarketPage from './pages/PolandMarketPage';
-import BlogPage from './pages/BlogPage';
-import AdminDashboard from './pages/AdminDashboard';
-import BlogPostPage from './pages/BlogPostPage';
+import { useEffect, lazy, Suspense } from 'react';
+
+// Lazy load all pages
+const HomePage = lazy(() => import('./pages/HomePage'));
+const CustomSoftwarePage = lazy(() => import('./pages/CustomSoftwarePage'));
+const MobileAppDevelopmentPage = lazy(() => import('./pages/MobileAppDevelopmentPage'));
+const WebDevelopmentPage = lazy(() => import('./pages/WebDevelopmentPage'));
+const AIAgentDevelopmentPage = lazy(() => import('./pages/AIAgentDevelopmentPage'));
+const SEOPage = lazy(() => import('./pages/SEOPage'));
+const GraphicsDesignPage = lazy(() => import('./pages/GraphicsDesignPage'));
+const ContentWritingPage = lazy(() => import('./pages/ContentWritingPage'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const USMarketPage = lazy(() => import('./pages/USMarketPage'));
+const UKMarketPage = lazy(() => import('./pages/UKMarketPage'));
+const PakistanMarketPage = lazy(() => import('./pages/PakistanMarketPage'));
+const CanadaMarketPage = lazy(() => import('./pages/CanadaMarketPage'));
+const PolandMarketPage = lazy(() => import('./pages/PolandMarketPage'));
+const AustraliaMarketPage = lazy(() => import('./pages/AustraliaMarketPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const AdminDashboard = lazy(() => import('./pages/AdminDashboard'));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
+
+// Loading fallback
+const PageLoader = () => (
+    <div className="min-h-screen bg-[#080808] flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-[#ccff00]/20 border-t-[#ccff00] rounded-full animate-spin"></div>
+    </div>
+);
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -80,26 +92,31 @@ export default function App() {
       <Router>
         <ScrollToTop />
         <FloatingWhatsApp />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/custom-software" element={<CustomSoftwarePage />} />
-          <Route path="/mobile-app-development" element={<MobileAppDevelopmentPage />} />
-          <Route path="/web-development" element={<WebDevelopmentPage />} />
-          <Route path="/ai-agent-development" element={<AIAgentDevelopmentPage />} />
-          <Route path="/seo-mastery" element={<SEOPage />} />
-          <Route path="/graphics-design" element={<GraphicsDesignPage />} />
-          <Route path="/content-writing" element={<ContentWritingPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/us-market" element={<USMarketPage />} />
-          <Route path="/uk-market" element={<UKMarketPage />} />
-          <Route path="/pakistan-market" element={<PakistanMarketPage />} />
-          <Route path="/canada-market" element={<CanadaMarketPage />} />
-          <Route path="/poland-market" element={<PolandMarketPage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/custom-software" element={<CustomSoftwarePage />} />
+            <Route path="/mobile-app-development" element={<MobileAppDevelopmentPage />} />
+            <Route path="/web-development" element={<WebDevelopmentPage />} />
+            <Route path="/ai-agent-development" element={<AIAgentDevelopmentPage />} />
+            <Route path="/seo-mastery" element={<SEOPage />} />
+            <Route path="/graphics-design" element={<GraphicsDesignPage />} />
+            <Route path="/content-writing" element={<ContentWritingPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/us-market" element={<USMarketPage />} />
+            <Route path="/uk-market" element={<UKMarketPage />} />
+            <Route path="/pakistan-market" element={<PakistanMarketPage />} />
+            <Route path="/canada-market" element={<CanadaMarketPage />} />
+            <Route path="/poland-market" element={<PolandMarketPage />} />
+            <Route path="/australia-market" element={<AustraliaMarketPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+          </Routes>
+        </Suspense>
       </Router>
     </HelmetProvider>
   );

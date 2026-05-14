@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 import CountryMarquee from '../components/CountryMarquee';
 import HeroText from '../components/ui/hero-shutter-text';
@@ -68,18 +69,19 @@ const PakistanMarketPage = () => {
   return (
     <div className="bg-[#090909] text-[#d3c8b8] min-h-screen font-sans selection:bg-[#ff5b36] selection:text-white overflow-x-hidden">
       <Helmet>
-        <title>Software Development Services in Pakistan | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Top-tier software engineering and web development services in Pakistan. Helping local businesses in Karachi, Lahore, and Islamabad scale with AI-driven tech." />
+        <title>Software Development Services in Pakistan | ABUQITMIRLABS</title>
+        <meta name="description" content="Driving digital innovation in Pakistan. ABUQITMIRLABS .TECH provides top-tier custom software, AI agent integration, and hyper-local SEO for businesses in Karachi, Lahore, and Islamabad." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/pakistan-market" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Transforming Pakistan's Digital Landscape | ABUQITMIRLABS.TECH" />
-        <meta property="og:description" content="Custom software and high-speed web solutions for the Pakistani market. Local expertise, global standards." />
+        <meta property="og:title" content="Transforming Pakistan's Digital Landscape | ABUQITMIRLABS" />
+        <meta property="og:description" content="Driving digital innovation in Pakistan. ABUQITMIRLABS .TECH provides top-tier custom software, AI agent integration, and hyper-local SEO." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/pakistan-market" />
         <meta property="og:type" content="website" />
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:pt-40 md:px-10 overflow-hidden">
@@ -103,7 +105,7 @@ const PakistanMarketPage = () => {
             </div>
 
             <MagicText 
-              text="Empowering Pakistani startups, SMEs, and large-scale industries with world-class technology. ABUQITMIRLABS.TECH delivers cutting-edge custom software, intelligent AI agents, and hyper-local SEO."
+              text="Empowering Pakistani startups, SMEs, and large-scale industries with world-class technology. ABUQITMIRLABS .TECH delivers cutting-edge custom software, intelligent AI agents, and hyper-local SEO."
               className="max-w-3xl text-xl md:text-2xl text-[#9f978a]"
             />
 
@@ -183,7 +185,7 @@ const PakistanMarketPage = () => {
         <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_bottom_right,rgba(255,91,54,0.03),transparent_40%)]"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24">
-            <span className="text-sm font-semibold uppercase tracking-[0.35em] text-[#ff5b36] mb-8 block">ABUQITMIRLABS.TECH Solution</span>
+            <span className="text-sm font-semibold uppercase tracking-[0.35em] text-[#ff5b36] mb-8 block">ABUQITMIRLABS .TECH Solution</span>
             <AnimatedShinyText 
               text="Driving Digital Pakistan Forward." 
               textClassName="text-5xl md:text-9xl"

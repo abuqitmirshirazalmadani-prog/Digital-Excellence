@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 import HeroText from '../components/ui/hero-shutter-text';
 import { AnimatedShinyText } from '../components/ui/animated-shiny-text';
@@ -53,25 +54,27 @@ const CanadaMarketPage = () => {
       a: "Custom AI agents can automate bilingual customer support, intelligently manage inventory queries, and provide personalized product recommendations 24/7, vastly improving the customer experience."
     },
     {
-      q: "Why partner with ABUQITMIRLABS.TECH for the Canadian market?",
-      a: "We offer a rare combination of elite technical engineering and deep semantic SEO expertise. We deliver North American-level quality and innovation with a highly optimized investment ROI."
+      q: "Why partner with ABUQITMIRLABS .TECH for the Canadian market?",
+      a: "We offer a rare combination of elite technical engineering and deep semantic SEO expertise by ABUQITMIRLABS .TECH. We deliver North American-level quality and innovation with a highly optimized investment ROI."
     }
   ];
 
   return (
     <div className="bg-[#090909] text-[#d3c8b8] min-h-screen font-sans selection:bg-[#ff5b36] selection:text-white">
       <Helmet>
-        <title>Software Engineering & Web Apps Canada | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="High-performance digital solutions for the Canadian market. Vancouver to Toronto, we help businesses scale with custom software and PIPEDA-compliant tech." />
+        <title>Software Engineering & Web Apps Canada | ABUQITMIRLABS</title>
+        <meta name="description" content="Empowering Canadian enterprises with futuristic tech. ABUQITMIRLABS .TECH delivers PIPEDA-compliant software, specialized web apps, and AI automation for Vancouver, Toronto, and beyond." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/canada-market" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Canadian Enterprise Tech Solutions | ABUQITMIRLABS.TECH" />
+        <meta property="og:title" content="Canadian Enterprise Tech Solutions | ABUQITMIRLABS" />
+        <meta property="og:description" content="Empowering Canadian enterprises with futuristic tech. ABUQITMIRLABS .TECH delivers PIPEDA-compliant software and specialized web apps." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/canada-market" />
         <meta property="og:type" content="website" />
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 md:pt-40 md:px-10 overflow-hidden text-center">
@@ -99,7 +102,7 @@ const CanadaMarketPage = () => {
               </div>
 
               <MagicText 
-                text="Accelerate your growth in the Canadian tech landscape. ABUQITMIRLABS.TECH provides scalable custom software engineering and entity-based SEO strategies for businesses nationwide."
+                text="Accelerate your growth in the Canadian tech landscape. ABUQITMIRLABS .TECH provides scalable custom software engineering and entity-based SEO strategies for businesses nationwide."
                 className="max-w-2xl text-xl md:text-2xl text-[#9f978a] mb-12"
               />
 
@@ -182,7 +185,7 @@ const CanadaMarketPage = () => {
         </div>
       </section>
 
-      {/* Solution Section */}
+      {/* The ABUQITMIRLABS .TECH Edge */}
       <section className="py-32 px-6 md:px-10 bg-[#0d0d0d] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(circle_at_center,rgba(255,91,54,0.03),transparent_70%)]"></div>
         <div className="max-w-7xl mx-auto relative z-10">

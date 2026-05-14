@@ -38,7 +38,7 @@ const AdminDashboard = () => {
         slug: '',
         excerpt: '',
         content: '',
-        author: 'Abu Qitmir Shiraz Almadani',
+        author: 'ABUQITMIRLABS .TECH Shiraz Almadani',
         category: 'AI',
         published: true,
         coverImage: '',
@@ -71,7 +71,7 @@ const AdminDashboard = () => {
             slug: post.slug || '',
             excerpt: post.excerpt || '',
             content: post.content || '',
-            author: post.author || 'Abu Qitmir Shiraz Almadani',
+            author: post.author || 'ABUQITMIRLABS .TECH Shiraz Almadani',
             category: post.category || 'AI',
             published: post.published ?? true,
             coverImage: post.coverImage || '',
@@ -209,7 +209,7 @@ const AdminDashboard = () => {
                     slug: '',
                     excerpt: '',
                     content: '',
-                    author: 'Abu Qitmir Shiraz Almadani',
+                    author: 'ABUQITMIRLABS .TECH Shiraz Almadani',
                     category: 'AI',
                     published: true,
                     coverImage: '',
@@ -345,7 +345,7 @@ const AdminDashboard = () => {
                                 setEditingId(null);
                                 setFormData({
                                     title: '', slug: '', excerpt: '', content: '', 
-                                    author: 'Abu Qitmir Shiraz Almadani', category: 'AI', 
+                                    author: 'ABUQITMIRLABS .TECH Shiraz Almadani', category: 'AI', 
                                     published: true, coverImage: '', tags: ''
                                 });
                             }}
@@ -397,7 +397,7 @@ const AdminDashboard = () => {
                                             setEditingId(null);
                                             setFormData({
                                                 title: '', slug: '', excerpt: '', content: '', 
-                                                author: 'Abu Qitmir Shiraz Almadani', category: 'AI', 
+                                                author: 'ABUQITMIRLABS .TECH Shiraz Almadani', category: 'AI', 
                                                 published: true, coverImage: '', tags: ''
                                             });
                                         }}
@@ -502,7 +502,7 @@ const AdminDashboard = () => {
                                                         >
                                                             <img 
                                                                 src={formData.coverImage} 
-                                                                alt="Cover Preview" 
+                                                                alt="futuristic blog post cover preview" 
                                                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                                                 onError={(e) => {
                                                                     (e.target as HTMLImageElement).src = 'https://placehold.co/600x400/1a1a1a/3b82f6?text=Invalid+Image+URL';
@@ -604,7 +604,7 @@ const AdminDashboard = () => {
                                     {posts.map(post => (
                                         <div key={post.id} className="bg-zinc-950/50 border border-white/5 hover:border-white/10 rounded-3xl p-6 transition-all group flex flex-col md:flex-row items-center gap-6">
                                             <div className="w-24 h-16 rounded-xl overflow-hidden shrink-0 bg-zinc-900 border border-white/5">
-                                                <img src={post.coverImage} className="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity" alt="" />
+                                                <img src={post.coverImage} className="w-full h-full object-cover opacity-50 group-hover:opacity-100 transition-opacity" alt={`thumbnail for ${post.title}`} />
                                             </div>
                                             <div className="flex-1 text-center md:text-left">
                                                 <div className="flex items-center justify-center md:justify-start gap-2 mb-1">

@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const AboutPage = () => {
   const stats = [
@@ -56,18 +57,25 @@ const AboutPage = () => {
   return (
     <div className="bg-[#050505] text-zinc-400 font-sans antialiased overflow-x-hidden min-h-screen relative selection:bg-white/10 selection:text-white">
       <Helmet>
-        <title>About ABUQITMIRLABS.TECH | Leading Software Specialist & Web Engineering</title>
-        <meta name="description" content="Learn about ABUQITMIRLABS.TECH, a Full Stack Development & Custom Software Specialist team with 10+ years of experience in building high-performance digital solutions." />
+        <title>About Shiraz Almadani | AI Mobile App & SaaS Expert ABUQITMIRLABS</title>
+        <meta name="description" content="Discover the vision behind ABUQITMIRLABS .TECH. We are a global software engineering lab dedicated to building high-performance digital ecosystems, AI-driven architectures, and scalable business solutions." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/about" />
         
-        {/* Open Graph */}
-        <meta property="og:title" content="About ABUQITMIRLABS.TECH | Engineering Digital Experiences" />
-        <meta property="og:description" content="M.B.A. in Commerce & 9+ industry certifications. Meet the mind behind ABUQITMIRLABS.TECH." />
+        {/* OG Tags */}
+        <meta property="og:title" content="About Shiraz Almadani | ABUQITMIRLABS" />
+        <meta property="og:description" content="Discover the vision behind ABUQITMIRLABS .TECH. Specialized in high-performance digital ecosystems and AI-driven architectures." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/about" />
         <meta property="og:type" content="profile" />
-      </Helmet>
+        <meta property="og:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
 
+        {/* Twitter Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Shiraz Almadani | ABUQITMIRLABS" />
+        <meta name="twitter:description" content="Discover the vision behind ABUQITMIRLABS .TECH. Specialized in high-performance digital ecosystems and AI-driven architectures." />
+        <meta name="twitter:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+      </Helmet>
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex flex-col justify-center items-center pt-32 md:pt-40 pb-20 overflow-hidden">
@@ -134,8 +142,10 @@ const AboutPage = () => {
                 <div className="relative w-full max-w-sm aspect-[4/5] rounded-[3rem] overflow-hidden border border-white/10 bg-zinc-900 mx-auto lg:mx-0 p-2">
                     <img 
                         src="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" 
-                        alt="ABUQITMIRLABS.TECH" 
+                        alt="futuristic professional portrait of Shiraz Almadani - Lead Architect at ABUQITMIRLABS.TECH" 
                         className="w-full h-full object-cover rounded-[2.8rem] transition-all duration-1000 group-hover:scale-105"
+                        loading="lazy"
+                        decoding="async"
                     />
                 </div>
             </motion.div>
@@ -156,10 +166,10 @@ const AboutPage = () => {
  
                 <div className="space-y-8 max-w-xl">
                     <p className="text-xl md:text-2xl font-light text-zinc-400 leading-relaxed italic border-l border-white/20 pl-8">
-                       "At ABUQITMIRLABS.TECH, we don't just build websites; we engineer complete digital experiences."
+                       "At ABUQITMIRLABS .TECH, we don't just build websites; we engineer complete digital experiences."
                     </p>
                     <p className="text-lg text-zinc-500 leading-relaxed">
-                        ABUQITMIRLABS.TECH is a premier Full Stack Web Development and Custom Software specialist firm with over a decade of continuous learning and hands-on development. From the first wireframe to live deployment and beyond, we handle it all.
+                        ABUQITMIRLABS .TECH is a premier Full Stack Web Development and Custom Software specialist firm with over a decade of continuous learning and hands-on development. From the first wireframe to live deployment and beyond, we handle it all.
                     </p>
                     <p className="text-lg text-zinc-500 leading-relaxed">
                         With an M.B.A. in Commerce from Karachi University and nine industry certifications, I combine strategic business thinking with deep technical expertise to deliver solutions that genuinely move the needle for clients.

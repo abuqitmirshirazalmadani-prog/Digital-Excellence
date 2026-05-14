@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 import HeroText from '../components/ui/hero-shutter-text';
 import { AnimatedShinyText } from '../components/ui/animated-shiny-text';
@@ -61,12 +62,20 @@ const PolandMarketPage = () => {
   return (
     <div className="bg-[#090909] text-[#d3c8b8] min-h-screen font-sans selection:bg-[#ff5b36] selection:text-white">
       <Helmet>
-        <title>Software Development Services Poland | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Advanced technology bridging European markets. Polish tech excellence meets global software engineering. GDPR compliant, high-performance web development." />
+        <title>Software Development Services Poland | ABUQITMIRLABS</title>
+        <meta name="description" content="ABUQITMIRLABS .TECH bridges the gap between Polish tech excellence and global standards. Specialized software engineering and EU-targeted SEO for the growing Polish market." />
+        <meta property="og:title" content="Software Development Services Poland | ABUQITMIRLABS" />
+        <meta property="og:description" content="Polish tech excellence meets global standards by ABUQITMIRLABS .TECH. Specialized software engineering and EU-targeted SEO." />
+        <meta property="og:url" content="https://abuqitmirlabs.tech/poland-market" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Software Development Services Poland | ABUQITMIRLABS" />
+        <meta name="twitter:description" content="Polish tech excellence meets global standards by ABUQITMIRLABS .TECH. Specialized software engineering and EU-targeted SEO." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/poland-market" />
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex flex-col justify-center items-center px-6 pt-32 md:pt-40 md:px-10 overflow-hidden">
@@ -88,7 +97,7 @@ const PolandMarketPage = () => {
             </div>
 
             <MagicText 
-              text="Capitalize on Europe’s fastest-growing digital economy. ABUQITMIRLABS.TECH delivers high-end custom software architecture, AI agent integration, and EU-targeted Semantic SEO for innovative Polish startups."
+              text="Capitalize on Europe’s fastest-growing digital economy. ABUQITMIRLABS .TECH delivers high-end custom software architecture, AI agent integration, and EU-targeted Semantic SEO for innovative Polish startups."
               className="max-w-2xl text-xl md:text-2xl text-[#9f978a]"
             />
 

@@ -33,6 +33,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const CustomSoftwarePage = () => {
@@ -124,15 +125,22 @@ const CustomSoftwarePage = () => {
   return (
     <div className="bg-[#000000] text-slate-100 font-sans antialiased overflow-x-hidden min-h-screen relative selection:bg-blue-500/30 selection:text-white">
       <Helmet>
-        <title>Custom Software Development Services | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Professional custom software development services for startups and businesses. Scalable, secure, and AI-driven solutions built for enterprise-grade growth." />
+        <title>Custom Software Engineering | SaaS & Enterprise Solutions ABUQITMIRLABS</title>
+        <meta name="description" content="Professional custom software engineering by ABUQITMIRLABS .TECH. We build tailor-made enterprise ERPs, specialized SaaS platforms, and secure backend architectures for startups." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/custom-software" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Custom Software Development Services | ABUQITMIRLABS.TECH" />
-        <meta property="og:description" content="Tailor-made software assets engineered for your business. MVP development, legacy modernization, and enterprise ERP systems." />
+        <meta property="og:title" content="Custom Software Development | ABUQITMIRLABS" />
+        <meta property="og:description" content="Professional custom software engineering by ABUQITMIRLABS .TECH. Tailor-made enterprise ERPs and secure backend architectures." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/custom-software" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Custom Software Development | ABUQITMIRLABS" />
+        <meta name="twitter:description" content="Professional custom software engineering by ABUQITMIRLABS .TECH. Tailor-made enterprise ERPs and secure backend architectures." />
+        <meta name="twitter:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
         
         {/* Schema Markup */}
         <script type="application/ld+json">
@@ -143,7 +151,7 @@ const CustomSoftwarePage = () => {
             "description": "We engineer tailor-made software solutions that streamline operations and give your business a decisive competitive edge.",
             "provider": {
               "@type": "Organization",
-              "name": "ABUQITMIRLABS.TECH",
+              "name": "ABUQITMIRLABS .TECH",
               "url": "https://abuqitmirlabs.tech"
             },
             "serviceType": "Software Development",
@@ -161,6 +169,81 @@ const CustomSoftwarePage = () => {
             }
           })}
         </script>
+
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(item => ({
+              "@type": "Question",
+              "name": item.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a
+              }
+            }))
+          })}
+        </script>
+
+        {/* HowTo Schema (Development Process) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "Our Custom Software Development Process",
+            "description": "A 5-step rigorous technical methodology to engineer robust, secure, and scalable software assets.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Strategic Discovery",
+                "text": "Analyze business operations to identify where custom software can drive the most ROI."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Architecture & UI",
+                "text": "Blueprint a scalable multi-tenant architecture and high-fidelity interface design."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Clean Engineering",
+                "text": "Produce modular, typed code adhering to clean architecture principles for performance."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Security Audits & QA",
+                "text": "Perform stress tests and end-to-end security audits to ensure zero vulnerabilities."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Launch & Optimization",
+                "text": "Manage seamless deployment and provide continuous optimization based on usage data."
+              }
+            ]
+          })}
+        </script>
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://abuqitmirlabs.tech"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Custom Software Development",
+                "item": "https://abuqitmirlabs.tech/custom-software"
+              }
+            ]
+          })}
+        </script>
       </Helmet>
 
       {/* Unicorn Mask Background */}
@@ -169,6 +252,7 @@ const CustomSoftwarePage = () => {
       </div>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="animate-enter-delay-2 relative pt-24 md:pt-32 pb-20 z-10">
@@ -739,7 +823,7 @@ const CustomSoftwarePage = () => {
             {[
               {
                 title: "Enterprise Digital Architecture",
-                desc: "Watch our lead architect ABUQITMIRLABS.TECH breakdown complex digital ecosystems.",
+                desc: "Watch our lead architect at ABUQITMIRLABS .TECH breakdown complex digital ecosystems.",
                 videoId: "v25Fo6O3iy4"
               },
               {

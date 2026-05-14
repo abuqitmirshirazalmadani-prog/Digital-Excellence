@@ -210,7 +210,7 @@ const NexusHero = () => {
  
                     <div className="max-w-4xl mx-auto mb-10 px-4">
                         <MagicText 
-                            text="Welcome to ABUQITMIRLABS.TECH, where we engineer digital excellence. We do not just build generic websites; we architect high-performance digital solutions that serve as the ultimate growth engine for your brand. From intelligent AI agents and scalable MVP development for tech startups to data-driven semantic SEO, our precision-engineered strategies ensure you dominate your market."
+                            text="“We build futuristic AI-powered mobile apps, SaaS platforms, Flutter applications, and no-code startup solutions.”"
                             className="justify-center text-center leading-[1.6] font-medium"
                             wordClassName="text-xs sm:text-sm md:text-base text-gray-400"
                         />
@@ -226,16 +226,16 @@ const NexusHero = () => {
                             href="https://wa.me/923233260859" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-gray-950 font-bold text-sm hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] active:scale-95 flex items-center justify-center"
+                            className="group w-full sm:w-auto px-8 py-4 rounded-xl bg-white text-gray-950 font-bold text-sm hover:bg-[#ccff00] transition-all shadow-[0_0_20px_rgba(204,255,0,0.2)] active:scale-95 flex items-center justify-center gap-2"
                         >
-                            Chat Directly on WhatsApp
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            Build Your AI App
                         </a>
                         <Link 
-                            to="/#services" 
+                            to="/contact" 
                             className="w-full sm:w-auto px-8 py-4 rounded-xl bg-zinc-900/50 border border-white/10 text-white font-bold text-sm hover:bg-zinc-800/50 transition-all backdrop-blur-md flex items-center justify-center gap-2 active:scale-95"
                         >
-                            <Terminal className="w-4 h-4" />
-                            Explore Our Custom Solutions
+                            Get Free Consultation
                         </Link>
                     </motion.div>
                 </div>

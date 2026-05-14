@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
 
 const WebDevelopmentPage = () => {
@@ -100,15 +101,22 @@ const WebDevelopmentPage = () => {
   return (
     <div className="bg-[#050505] text-axiom-sub font-body antialiased overflow-x-hidden min-h-screen relative selection:bg-blue-500/30 selection:text-white">
       <Helmet>
-        <title>Web Development Services for Modern Businesses | ABUQITMIRLABS.TECH</title>
-        <meta name="description" content="Professional web development services focusing on high-performance Jamstack, Headless CMS, and scalable web solutions optimized for speed and SEO." />
+        <title>Web Development Company | High-Performance Ecosystems ABUQITMIRLABS</title>
+        <meta name="description" content="ABUQITMIRLABS .TECH delivers high-speed, secure web ecosystems. Specialized in Jamstack, Headless CMS, and conversion-optimized web applications with scalable architecture." />
         <link rel="canonical" href="https://abuqitmirlabs.tech/web-development" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Web Development Services | ABUQITMIRLABS.TECH" />
-        <meta property="og:description" content="High-performance web engineering for modern brands. Fast, secure, and infinitely scalable." />
+        <meta property="og:title" content="Web Development Company | ABUQITMIRLABS" />
+        <meta property="og:description" content="ABUQITMIRLABS .TECH delivers high-speed, secure web ecosystems. Specialized in Jamstack, Headless CMS, and conversion-optimized web applications." />
         <meta property="og:url" content="https://abuqitmirlabs.tech/web-development" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Web Development Company | ABUQITMIRLABS" />
+        <meta name="twitter:description" content="ABUQITMIRLABS .TECH delivers high-speed, secure web ecosystems. Specialized in Jamstack, Headless CMS, and conversion-optimized web applications." />
+        <meta name="twitter:image" content="https://i.postimg.cc/hjLzDQHK/abuqitmir222.png" />
 
         {/* Schema Markup */}
         <script type="application/ld+json">
@@ -119,16 +127,103 @@ const WebDevelopmentPage = () => {
             "description": "Stop losing customers to slow loading screens. We engineer high-performance, secure, and infinitely scalable websites.",
             "provider": {
               "@type": "Organization",
-              "name": "ABUQITMIRLABS.TECH",
+              "name": "ABUQITMIRLABS .TECH",
               "url": "https://abuqitmirlabs.tech"
             },
             "serviceType": "Web Engineering",
-            "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"]
+            "areaServed": ["US", "UK", "CA", "PK", "PL", "AE", "SA"],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Web Engineering Services",
+                "itemListElement": capabilities.map(c => ({
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": c.title
+                    }
+                }))
+            }
+          })}
+        </script>
+
+        {/* FAQ Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(item => ({
+              "@type": "Question",
+              "name": item.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": item.a
+              }
+            }))
+          })}
+        </script>
+
+        {/* HowTo Schema (Web Process) */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "Our Web Development Process",
+            "description": "A 5-step engineering pipeline optimized for speed and SEO to build high-performance web platforms.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Audit & Specs",
+                "text": "Technical analysis of current assets and goal setting."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "UX Architecture",
+                "text": "Mapping user flows for sub-second navigation."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Jamstack Build",
+                "text": "Engineering the frontend with Next.js and Tailwind."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "CMS Sync",
+                "text": "Connecting secure headless content management."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Edge Deploy",
+                "text": "Global distribution via Vercel Edge networks."
+              }
+            ]
+          })}
+        </script>
+
+        {/* Breadcrumb Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://abuqitmirlabs.tech"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Web Development",
+                "item": "https://abuqitmirlabs.tech/web-development"
+              }
+            ]
           })}
         </script>
       </Helmet>
 
       <Header />
+      <Breadcrumbs />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col justify-center items-center pt-24 md:pt-32 pb-20 px-6 z-10 overflow-hidden">
@@ -457,7 +552,7 @@ const WebDevelopmentPage = () => {
             {[
               {
                 title: "Enterprise Digital Architecture",
-                desc: "Watch our lead architect ABUQITMIRLABS.TECH breakdown complex digital ecosystems.",
+                desc: "Watch our lead architect at ABUQITMIRLABS .TECH breakdown complex digital ecosystems.",
                 videoId: "v25Fo6O3iy4"
               },
               {
