@@ -98,7 +98,7 @@ const CanadaMarketPage = () => {
               </motion.div>
 
               <div className="mb-12">
-                <HeroText text="ADVANCED" />
+                <HeroText text="CANADA" />
               </div>
 
               <MagicText 

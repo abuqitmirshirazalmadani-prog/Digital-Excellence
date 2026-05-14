@@ -30,6 +30,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
+import HeroText from '../components/ui/hero-shutter-text';
 
 const SEOPage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -133,13 +134,17 @@ const SEOPage = () => {
           We build digital empires
         </motion.div>
 
+        <div className="mb-4">
+          <HeroText text="RANKING" />
+        </div>
+
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-6xl md:text-8xl lg:text-[7rem] font-black tracking-tighter text-black text-center mb-10 leading-[0.95] max-w-6xl uppercase"
+          className="text-4xl md:text-6xl font-black tracking-tighter text-black text-center mb-10 leading-[0.95] max-w-6xl uppercase"
         >
           SEO Services <br />
-          <span className="text-transparent" style={{ WebkitTextStroke: '3px black' }}>& Local Search</span> <br />
+          <span className="text-transparent" style={{ WebkitTextStroke: '2px black' }}>& Local Search</span> <br />
           <span className="text-[#ccff00]">Mastery.</span>
         </motion.h1>
 

@@ -35,19 +35,19 @@ export default function HeroText({
         <AnimatePresence mode="wait">
           <motion.div
             key={count}
-            className="flex flex-wrap justify-center items-center w-full"
+            className="flex flex-nowrap justify-center items-center w-full"
           >
             {characters.map((char, i) => (
               <div
                 key={i}
-                className="relative px-[0.1vw] overflow-hidden group"
+                className="relative px-[0.1vw] overflow-hidden group shrink-0"
               >
-                {/* Main Character - Responsive sizing using vw */}
+                {/* Main Character - Responsive sizing using clamp */}
                 <motion.span
                   initial={{ opacity: 0, filter: "blur(10px)" }}
                   animate={{ opacity: 1, filter: "blur(0px)" }}
                   transition={{ delay: i * 0.04 + 0.3, duration: 0.8 }}
-                  className="text-[12vw] leading-none font-black text-white tracking-tighter"
+                  className="text-[clamp(1.5rem,8.5vw,10rem)] leading-none font-black text-white tracking-tighter inline-block"
                 >
                   {char === " " ? "\u00A0" : char}
                 </motion.span>
@@ -61,7 +61,7 @@ export default function HeroText({
                     delay: i * 0.04,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 text-[12vw] leading-none font-black text-[#ff5b36] z-10 pointer-events-none"
+                  className="absolute inset-0 text-[clamp(1.5rem,8.5vw,10rem)] leading-none font-black text-[#ff5b36] z-10 pointer-events-none inline-block"
                   style={{ clipPath: "polygon(0 0, 100% 0, 100% 35%, 0 35%)" }}
                 >
                   {char}
@@ -76,7 +76,7 @@ export default function HeroText({
                     delay: i * 0.04 + 0.1,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 text-[12vw] leading-none font-black text-gray-400 z-10 pointer-events-none"
+                  className="absolute inset-0 text-[clamp(1.5rem,8.5vw,10rem)] leading-none font-black text-gray-400 z-10 pointer-events-none inline-block"
                   style={{
                     clipPath: "polygon(0 35%, 100% 35%, 100% 65%, 0 65%)",
                   }}
@@ -93,7 +93,7 @@ export default function HeroText({
                     delay: i * 0.04 + 0.2,
                     ease: "easeInOut",
                   }}
-                  className="absolute inset-0 text-[12vw] leading-none font-black text-[#ff5b36] z-10 pointer-events-none"
+                  className="absolute inset-0 text-[clamp(1.5rem,8.5vw,10rem)] leading-none font-black text-[#ff5b36] z-10 pointer-events-none inline-block"
                   style={{
                     clipPath: "polygon(0 65%, 100% 65%, 100% 100%, 0 100%)",
                   }}

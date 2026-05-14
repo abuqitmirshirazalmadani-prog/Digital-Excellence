@@ -35,6 +35,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Breadcrumbs from '../components/Breadcrumbs';
 import CountryMarquee from '../components/CountryMarquee';
+import HeroText from '../components/ui/hero-shutter-text';
 
 const CustomSoftwarePage = () => {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -288,24 +289,16 @@ const CustomSoftwarePage = () => {
 
             {/* Headline */}
             <div className="text-center relative z-10">
+              <div className="mb-4">
+                <HeroText text="ENGINEERING" />
+              </div>
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="mx-auto max-w-5xl text-4xl font-medium tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl"
+                className="mx-auto max-w-5xl text-3xl font-medium tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl uppercase font-black"
               >
-                <span className="text-white/95">Custom Software</span><br />
-                <span className="relative inline-block mt-4">
-                  <span className="absolute -inset-2 rounded-md bg-blue-500/30 blur-2xl"></span>
-                  <span className="relative">
-                    <span className="relative z-10">
-                      <span className="relative inline-block">
-                        <span className="absolute -inset-1 rounded-md ring-2 ring-blue-400/70 bg-gradient-to-br from-white/0 via-white/10 to-white/0"></span>
-                        <span className="px-6 uppercase">Development</span>
-                      </span>
-                    </span>
-                  </span>
-                </span>
-                <span className="text-white/95 ml-4">Services.</span>
+                Custom Software <br />
+                <span className="text-[#3b82f6]">Development Services.</span>
               </motion.h1>
               
               <motion.p 
