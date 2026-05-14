@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { ArrowRight, Terminal, ChevronRight, BarChart3, Server, Code2, ShieldCheck, AlertTriangle } from 'lucide-react';
 import HeroHeading from './hero-heading';
 import { MagicText } from './magic-text';
@@ -11,7 +11,12 @@ const NexusHero = () => {
     const tunnelRef = useRef<HTMLDivElement>(null);
     const sceneRef = useRef<HTMLDivElement>(null);
     
-    // Parallax state
+    // Scroll Parallax
+    const { scrollY } = useScroll();
+    const tunnelY = useTransform(scrollY, [0, 800], [0, -120]);
+    const ambientY = useTransform(scrollY, [0, 800], [0, 50]);
+    
+    // Mouse Parallax state
     const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
     const [targetPos, setTargetPos] = useState({ x: 50, y: 50 });
 
@@ -152,9 +157,13 @@ const NexusHero = () => {
     return (
         <section id="nexus-engine-hero" className="bg-[#0a0a0a] text-[#ededed] overflow-hidden w-full min-h-screen relative font-sans selection:bg-white/20 selection:text-white flex flex-col">
             {/* Ambient Background */}
-            <div className="absolute inset-0 z-0 pointer-events-none"
-                style={{ background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 60%)' }}>
-            </div>
+            <motion.div 
+                className="absolute inset-0 z-0 pointer-events-none"
+                style={{ 
+                    background: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 60%)',
+                    y: ambientY
+                }}
+            />
 
             {/* 3D Tunnel Scene */}
             <div 
@@ -165,9 +174,16 @@ const NexusHero = () => {
                     perspectiveOrigin: `${targetPos.x}% ${targetPos.y}%` 
                 }}
             >
-                <div ref={tunnelRef} className="relative w-full h-full" style={{ transformStyle: 'preserve-3d' }}>
+                <motion.div 
+                    ref={tunnelRef} 
+                    className="relative w-full h-full" 
+                    style={{ 
+                        transformStyle: 'preserve-3d',
+                        y: tunnelY
+                    }}
+                >
                     {/* Panels injected via Effect */}
-                </div>
+                </motion.div>
             </div>
 
             {/* Content Overlay */}

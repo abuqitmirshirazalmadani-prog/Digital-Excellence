@@ -153,7 +153,7 @@ const AboutPage = () => {
                         <span className="text-zinc-600 italic">Thinker.</span>
                     </h2>
                 </div>
-
+ 
                 <div className="space-y-8 max-w-xl">
                     <p className="text-xl md:text-2xl font-light text-zinc-400 leading-relaxed italic border-l border-white/20 pl-8">
                        "At ABUQITMIRLABS.TECH, we don't just build websites; we engineer complete digital experiences."
