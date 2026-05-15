@@ -2,11 +2,40 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
+import sitemap from 'vite-plugin-sitemap';
 
 export default defineConfig(({mode}) => {
   const env = loadEnv(mode, '.', '');
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(), 
+      tailwindcss(),
+      sitemap({
+        hostname: 'https://abuqitmirlabs.tech',
+        dynamicRoutes: [
+          '/',
+          '/about',
+          '/custom-software',
+          '/mobile-app-development',
+          '/web-development',
+          '/ai-agent-development',
+          '/seo-mastery',
+          '/graphics-design',
+          '/content-writing',
+          '/contact',
+          '/us-market',
+          '/uk-market',
+          '/pakistan-market',
+          '/canada-market',
+          '/poland-market',
+          '/australia-market',
+          '/terms',
+          '/privacy',
+          '/blog',
+          '/admin',
+        ],
+      }),
+    ],
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
