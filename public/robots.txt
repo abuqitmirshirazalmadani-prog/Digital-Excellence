@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /admin
+Disallow: /google87984536fe5662da
 
 Sitemap: https://abuqitmirlabs.tech/sitemap.xml
