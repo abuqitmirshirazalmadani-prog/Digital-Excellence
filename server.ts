@@ -1,4 +1,5 @@
 import express from 'express';
+import compression from 'compression';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
@@ -36,6 +37,9 @@ if (firebaseConfig.apiKey) {
 async function startServer() {
   const app = express();
   const PORT = 3000;
+
+  // Use compression middleware
+  app.use(compression());
 
   // Use JSON and URL encoded bodies
   app.use(express.json());

@@ -87,6 +87,18 @@ const FloatingWhatsApp = () => (
 );
 
 export default function App() {
+  useEffect(() => {
+    // Only dispatch in production/build time for pre-rendering
+    const trigger = () => {
+      // Small delay to ensure animations or lazy content settled
+      setTimeout(() => {
+        document.dispatchEvent(new Event('x-render-trigger'));
+      }, 500);
+    };
+    
+    trigger();
+  }, []);
+
   return (
     <HelmetProvider>
       <Router>
